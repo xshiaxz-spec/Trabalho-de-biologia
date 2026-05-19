@@ -1,0 +1,10 @@
+seminaio sobre o aquecimento global, e agenda 2030: desafios, objetivos e ações para um futuro sustentavel, tempo 10 a 15min
+
+estrutura =slide 1 { nome da instituiçao// logo do iff
+titulo do seminario
+nome dos alunos 
+nome do professor
+cidade/ano
+}
+
+slide 2 {
