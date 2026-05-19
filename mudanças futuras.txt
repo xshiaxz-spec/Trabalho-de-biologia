@@ -7,4 +7,15 @@ nome do professor
 cidade/ano
 }
 
-slide 2 {
+slide 2 { conceito de efeito estufa/ causas/ consequencias (principais gases de efeito estuda// quais ações que mais contribuem// dados do numero e brasil) }
+
+slide 3 { relaçoes do efeito estufa com o aquecimento global
+
+slide 4 { ações para contemplar as ODS (objjetivo do desenvolvimento sustntavel)
+
+slide 5 { conclusão/reflexão: É possivel contemplar as as ODS até 2030 ?
+
+slide 6 { referencias bibliograficas
+
+*usar imagens/ fluxogramas/ videos/ esquemas
+* evitar slides carregado de texto
