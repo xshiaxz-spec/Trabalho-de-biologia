@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efeito Estufa — Uma Jornada Pelo Planeta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="loading-inner">
+    <div class="loading-globe">
+      <div class="globe-ring"></div>
+      <div class="globe-ring r2"></div>
+      <div class="globe-ring r3"></div>
+      <div class="globe-core"></div>
+    </div>
+    <div class="loading-text">
+      <span class="loading-label">INICIALIZANDO</span>
+      <div class="loading-bar"><div class="loading-fill" id="loading-fill"></div></div>
+      <span class="loading-percent" id="loading-percent">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span class="nav-logo-icon">🌍</span>
+    <span>EFEITO ESTUFA</span>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#intro" class="nav-link">Início</a></li>
+    <li><a href="#what" class="nav-link">O Fenômeno</a></li>
+    <li><a href="#human" class="nav-link">Problema</a></li>
+    <li><a href="#natural" class="nav-link">Natural</a></li>
+    <li><a href="#bio" class="nav-link">Biológico</a></li>
+    <li><a href="#carousel" class="nav-link">Painel 3D</a></li>
+    <li><a href="#local" class="nav-link">Quissamã</a></li>
+    <li><a href="#ods" class="nav-link">ODS</a></li>
+    <li><a href="#solutions" class="nav-link">Soluções</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1 — INTRO CINEMATOGRÁFICA
+════════════════════════════════════════════ -->
+<section id="intro" class="section intro-section">
+  <canvas id="stars-canvas"></canvas>
+  <div class="earth-container">
+    <div class="earth-glow"></div>
+    <div class="earth-sphere">
+      <div class="earth-surface"></div>
+      <div class="earth-clouds"></div>
+      <div class="earth-atmosphere"></div>
+    </div>
+    <div class="earth-orbit-ring"></div>
+    <div class="earth-orbit-dot"></div>
+  </div>
+  <div class="intro-particles" id="intro-particles"></div>
+  <div class="intro-content">
+    <div class="intro-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span>DOCUMENTÁRIO INTERATIVO</span>
+      <span class="eyebrow-line"></span>
+    </div>
+    <h1 class="intro-title">
+      <span class="title-word">EFEITO</span>
+      <span class="title-word accent">ESTUFA</span>
+    </h1>
+    <p class="intro-subtitle">O planeta está ficando mais quente.<br>E nós estamos acelerando isso.</p>
+    <button class="explore-btn" id="explore-btn">
+      <span class="btn-text">Explorar</span>
+      <span class="btn-icon">↓</span>
+      <div class="btn-pulse"></div>
+    </button>
+  </div>
+  <div class="intro-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>ROLE PARA BAIXO</span>
+  </div>
+  <div class="intro-stat-bar">
+    <div class="stat-item"><span class="stat-num">+1.2°C</span><span class="stat-lbl">Aquecimento Global</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><span class="stat-num">421ppm</span><span class="stat-lbl">CO₂ na Atmosfera</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><span class="stat-num">3.7mm/ano</span><span class="stat-lbl">Elevação do Mar</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2 — O QUE É O EFEITO ESTUFA
+════════════════════════════════════════════ -->
+<section id="what" class="section what-section">
+  <div class="section-bg what-bg"></div>
+  <div class="what-animation-container">
+    <canvas id="greenhouse-canvas"></canvas>
+  </div>
+  <div class="what-content">
+    <div class="section-tag">SEÇÃO 01</div>
+    <h2 class="section-title">O <em>Fenômeno</em></h2>
+    <p class="section-lead">O Sol envia radiação de onda curta. A Terra absorve essa energia e reemite parte dela como calor infravermelho. Gases como CO₂, CH₄ e N₂O retêm parte desse calor na atmosfera — esse é o Efeito Estufa.</p>
+    <div class="gas-cards">
+      <div class="gas-card" data-gas="co2">
+        <div class="gas-icon">⚗️</div>
+        <div class="gas-formula">CO₂</div>
+        <div class="gas-name">Dióxido de Carbono</div>
+        <div class="gas-desc">Principal gás do efeito estufa antropogênico. Emitido por queima de combustíveis, indústrias e desmatamento.</div>
+        <div class="gas-bar"><div class="gas-fill" style="width:76%"></div></div>
+        <div class="gas-pct">76% das emissões</div>
+        <div class="gas-smoke"></div>
+      </div>
+      <div class="gas-card" data-gas="ch4">
+        <div class="gas-icon">🐄</div>
+        <div class="gas-formula">CH₄</div>
+        <div class="gas-name">Metano</div>
+        <div class="gas-desc">25x mais potente que o CO₂. Liberado por agropecuária, aterros sanitários e extração de petróleo.</div>
+        <div class="gas-bar"><div class="gas-fill" style="width:16%"></div></div>
+        <div class="gas-pct">16% das emissões</div>
+        <div class="gas-smoke"></div>
+      </div>
+      <div class="gas-card" data-gas="n2o">
+        <div class="gas-icon">🌾</div>
+        <div class="gas-formula">N₂O</div>
+        <div class="gas-name">Óxido Nitroso</div>
+        <div class="gas-desc">298x mais potente que o CO₂. Principal fonte: fertilizantes agrícolas e criação de animais.</div>
+        <div class="gas-bar"><div class="gas-fill" style="width:8%"></div></div>
+        <div class="gas-pct">8% das emissões</div>
+        <div class="gas-smoke"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3 — O PROBLEMA HUMANO
+════════════════════════════════════════════ -->
+<section id="human" class="section human-section">
+  <div class="human-bg-overlay"></div>
+  <canvas id="smoke-canvas"></canvas>
+  <div class="human-content">
+    <div class="section-tag warning">SEÇÃO 02</div>
+    <h2 class="section-title red">O <em>Problema</em> Humano</h2>
+    <p class="section-lead">Atividades humanas aumentaram drasticamente a concentração de gases do efeito estufa. O equilíbrio natural do planeta está sendo alterado.</p>
+    <div class="human-grid">
+      <div class="human-card" data-delay="0">
+        <div class="hcard-icon">🏭</div>
+        <h3>Combustíveis Fósseis</h3>
+        <p>Carvão, petróleo e gás natural são as maiores fontes de CO₂ da era industrial.</p>
+      </div>
+      <div class="human-card" data-delay="100">
+        <div class="hcard-icon">🌳</div>
+        <h3>Desmatamento</h3>
+        <p>Florestas derrubadas liberam CO₂ armazenado e reduzem a absorção de carbono.</p>
+      </div>
+      <div class="human-card" data-delay="200">
+        <div class="hcard-icon">🚗</div>
+        <h3>Transporte</h3>
+        <p>Veículos a combustão são responsáveis por cerca de 16% das emissões globais.</p>
+      </div>
+      <div class="human-card" data-delay="300">
+        <div class="hcard-icon">🔥</div>
+        <h3>Queimadas</h3>
+        <p>Incêndios criminosos destroem biomas inteiros e lançam enormes volumes de CO₂.</p>
+      </div>
+    </div>
+    <div class="counters-row">
+      <div class="counter-block">
+        <div class="counter-value" id="temp-counter">+0.0°C</div>
+        <div class="counter-label">Aumento de Temperatura desde 1850</div>
+      </div>
+      <div class="counter-block">
+        <div class="counter-value" id="co2-counter">280ppm</div>
+        <div class="counter-label">CO₂ Atmosférico</div>
+      </div>
+      <div class="counter-block">
+        <div class="counter-value" id="deforest-counter">0 ha</div>
+        <div class="counter-label">Floresta destruída hoje</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 4 — FUNÇÃO NATURAL
+════════════════════════════════════════════ -->
+<section id="natural" class="section natural-section">
+  <div class="natural-content">
+    <div class="section-tag">SEÇÃO 03</div>
+    <h2 class="section-title">A Função <em>Natural</em></h2>
+    <p class="section-lead">Sem o efeito estufa natural, a Terra teria cerca de −18°C. Com ele, a média global é de aproximadamente +15°C — tornando a vida possível.</p>
+    <div class="slider-comparison">
+      <div class="slider-labels">
+        <span class="slider-lbl lbl-cold">❄️ Sem Efeito Estufa<br><small>−18°C</small></span>
+        <span class="slider-lbl lbl-hot">🔥 Intensificado<br><small>+4°C além do natural</small></span>
+      </div>
+      <div class="slider-wrapper">
+        <div class="planet-before">
+          <div class="planet-visual frozen">
+            <div class="planet-surface-inner"></div>
+            <div class="planet-overlay frozen-overlay"></div>
+          </div>
+          <p class="planet-caption">Planeta Congelado</p>
+        </div>
+        <div class="slider-control-area">
+          <input type="range" id="temp-slider" min="0" max="100" value="45" class="temp-slider">
+          <div class="slider-temp-display" id="slider-temp">+15°C</div>
+        </div>
+        <div class="planet-after">
+          <div class="planet-visual warm">
+            <div class="planet-surface-inner warm-surface"></div>
+            <div class="planet-overlay warm-overlay" id="warm-overlay"></div>
+          </div>
+          <p class="planet-caption" id="planet-right-caption">Planeta Habitável ✅</p>
+        </div>
+      </div>
+
+      <!-- DYNAMIC EXPLANATION PANEL -->
+      <div class="temp-explanation-panel" id="temp-explanation">
+        <div class="temp-exp-zone" id="temp-exp-frozen">
+          <div class="temp-exp-icon">❄️</div>
+          <div class="temp-exp-content">
+            <h4>Por que tão frio?</h4>
+            <p>Sem gases estufa, a Terra reflete quase toda a energia solar de volta ao espaço. A média global cairia para −18°C — toda água líquida congelaria, tornando a vida como conhecemos impossível.</p>
+            <div class="temp-exp-causes">
+              <span class="cause-tag cold">Sem CO₂ na atmosfera</span>
+              <span class="cause-tag cold">Albedo máximo</span>
+              <span class="cause-tag cold">Sem retenção de calor</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="temp-exp-zone" id="temp-exp-ideal">
+          <div class="temp-exp-icon">✅</div>
+          <div class="temp-exp-content">
+            <h4>O equilíbrio perfeito</h4>
+            <p>O efeito estufa natural retém calor suficiente para manter água líquida, estações do ano e clima estável. CO₂, vapor d'água e metano naturais atuam como um cobertor suave ao redor do planeta.</p>
+            <div class="temp-exp-causes">
+              <span class="cause-tag ideal">CO₂ natural: ~280ppm</span>
+              <span class="cause-tag ideal">Vapor d'água atmosférico</span>
+              <span class="cause-tag ideal">Ciclo do carbono equilibrado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="temp-exp-zone" id="temp-exp-warning">
+          <div class="temp-exp-icon">⚠️</div>
+          <div class="temp-exp-content">
+            <h4>Aquecimento perigoso</h4>
+            <p>Com CO₂ acima de 400ppm (nível atual: 421ppm), a temperatura ultrapassa o equilíbrio natural. Geleiras derretem, o nível do mar sobe e eventos extremos ficam mais frequentes e intensos.</p>
+            <div class="temp-exp-causes">
+              <span class="cause-tag warn">CO₂ atual: 421ppm</span>
+              <span class="cause-tag warn">Combustíveis fósseis</span>
+              <span class="cause-tag warn">Desmatamento acelerado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="temp-exp-zone" id="temp-exp-crisis">
+          <div class="temp-exp-icon">🔥</div>
+          <div class="temp-exp-content">
+            <h4>Crise planetária</h4>
+            <p>Em +4°C acima do natural, a Terra entraria em colapso climático: secas massivas, extinção em massa, desaparecimento de cidades costeiras e sistemas alimentares inviáveis para bilhões de pessoas.</p>
+            <div class="temp-exp-causes">
+              <span class="cause-tag hot">Ponto de não-retorno</span>
+              <span class="cause-tag hot">Permafrost derretendo</span>
+              <span class="cause-tag hot">Metano em cascata</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5 — IMPACTOS BIOLÓGICOS
+════════════════════════════════════════════ -->
+<section id="bio" class="section bio-section">
+  <div class="bio-bg-grad"></div>
+  <div class="bio-content">
+    <div class="section-tag danger">SEÇÃO 04</div>
+    <h2 class="section-title">Impactos <em>Biológicos</em></h2>
+    <p class="section-lead">O aquecimento global não é apenas uma questão climática. É uma crise biológica que afeta todos os seres vivos do planeta.</p>
+    <div class="inline-ods-badges">
+      <span class="iob" style="--c:#3F7E44">ODS 13</span>
+      <span class="iob" style="--c:#56C02B">ODS 15</span>
+      <span class="iob" style="--c:#0A97D9">ODS 14</span>
+      <span class="iob" style="--c:#4C9F38">ODS 3</span>
+    </div>
+    <div class="bio-cards-grid">
+
+      <div class="bio-card" data-impact="phenology">
+        <div class="bio-card-glow"></div>
+        <div class="bio-card-num">01</div>
+        <div class="bio-card-icon">🌸</div>
+        <h3>Descompasso Fenológico</h3>
+        <p>Plantas florescem antes da chegada dos polinizadores. As cadeias alimentares começam a entrar em colapso silencioso.</p>
+        <div class="bio-visual phenology-visual">
+          <div class="flower-anim">🌸</div>
+          <div class="bee-anim">🐝</div>
+          <div class="time-broken">⏰</div>
+        </div>
+      </div>
+
+      <div class="bio-card" data-impact="ocean">
+        <div class="bio-card-glow ocean-glow"></div>
+        <div class="bio-card-num">02</div>
+        <div class="bio-card-icon">🌊</div>
+        <h3>Acidificação Oceânica</h3>
+        <p>O CO₂ dissolvido nos oceanos reduz o pH da água, dificultando a formação de corais, conchas e esqueletos marinhos.</p>
+        <div class="bio-visual ocean-visual">
+          <div class="coral-anim">🪸</div>
+          <div class="coral-dead">💀</div>
+        </div>
+      </div>
+
+      <div class="bio-card" data-impact="habitat">
+        <div class="bio-card-glow ice-glow"></div>
+        <div class="bio-card-num">03</div>
+        <div class="bio-card-icon">🧊</div>
+        <h3>Perda de Habitats</h3>
+        <p>O degelo do Ártico ameaça espécies polares e libera mais metano, criando um ciclo de aquecimento ainda maior.</p>
+        <div class="bio-visual habitat-visual">
+          <div class="ice-anim">🧊</div>
+          <div class="bear-anim">🐻‍❄️</div>
+        </div>
+      </div>
+
+      <div class="bio-card" data-impact="health">
+        <div class="bio-card-glow health-glow"></div>
+        <div class="bio-card-num">04</div>
+        <div class="bio-card-icon">🦟</div>
+        <h3>Saúde e Vetores</h3>
+        <p>Mosquitos transmissores de dengue, zika e malária avançam para regiões antes frias, ampliando epidemias.</p>
+        <div class="bio-visual health-visual">
+          <div class="mosquito-anim">🦟</div>
+          <div class="spread-anim">📍</div>
+        </div>
+      </div>
+
+      <div class="bio-card wide-card" data-impact="biodiversity">
+        <div class="bio-card-glow bio-glow"></div>
+        <div class="bio-card-num">05</div>
+        <div class="bio-card-icon">🦋</div>
+        <h3>Perda de Biodiversidade</h3>
+        <p>Muitas espécies migram para os polos e regiões mais altas em busca de temperaturas suportáveis. Outras não conseguem se adaptar e desaparecem para sempre.</p>
+        <div class="bio-visual biodiv-visual">
+          <div class="species-row">
+            <span class="species fade-1">🦋</span>
+            <span class="species fade-2">🐘</span>
+            <span class="species fade-3">🦁</span>
+            <span class="species fade-4">🦜</span>
+            <span class="species fade-5">🐆</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6 — CARROSSEL 3D FUTURISTA
+════════════════════════════════════════════ -->
+<section id="carousel" class="section carousel-section">
+  <canvas id="carousel-bg-canvas"></canvas>
+  <div class="carousel-content">
+    <div class="section-tag sci">PAINEL CIENTÍFICO</div>
+    <h2 class="section-title glow-title">Painel <em>3D</em> Interativo</h2>
+    <p class="section-lead">Explore os principais fatores do aquecimento global. Navegue e <strong>clique no card central</strong> para expandir.</p>
+
+    <div class="carousel-3d-wrapper" id="carousel-wrapper">
+      <div class="carousel-3d-scene" id="carousel-scene">
+
+        <!-- CARD 0: CO₂ -->
+        <div class="card-3d" data-index="0">
+          <div class="card-flipper">
+            <!-- FRENTE -->
+            <div class="card-face card-front">
+              <div class="card-inner">
+                <div class="card-header">
+                  <div class="card-molecule">⚗️</div>
+                  <div class="card-formula">CO₂</div>
+                  <div class="card-neon-line"></div>
+                </div>
+                <h3 class="card-title">Dióxido de Carbono</h3>
+                <p class="card-body">Principal vilão do aquecimento global. Emitido por combustíveis fósseis, carros, indústrias e queimadas. Concentração atual: 421 ppm — nível mais alto em 800.000 anos.</p>
+                <div class="card-data">
+                  <div class="card-stat"><span>421ppm</span><small>Concentração</small></div>
+                  <div class="card-stat"><span>76%</span><small>Das emissões</small></div>
+                </div>
+                <div class="card-click-hint">Clique para expandir ↗</div>
+                <div class="card-scan-line"></div>
+              </div>
+            </div>
+            <!-- VERSO -->
+            <div class="card-face card-back">
+              <div class="card-back-inner">
+                <button class="card-close-btn" aria-label="Fechar">✕</button>
+                <div class="card-back-icon">⚗️</div>
+                <div class="card-back-formula">CO₂</div>
+                <h3 class="card-back-title">Dióxido de Carbono</h3>
+                <div class="card-back-details">
+                  <div class="detail-row"><span class="detail-label">Concentração atual</span><span class="detail-value cyan">421 ppm</span></div>
+                  <div class="detail-row"><span class="detail-label">Nível pré-industrial</span><span class="detail-value">280 ppm</span></div>
+                  <div class="detail-row"><span class="detail-label">Aumento desde 1850</span><span class="detail-value warn">+50%</span></div>
+                  <div class="detail-row"><span class="detail-label">Tempo na atmosfera</span><span class="detail-value">100–300 anos</span></div>
+                </div>
+                <div class="card-back-divider"></div>
+                <p class="card-back-extra">O CO₂ é o principal responsável pelo efeito estufa antropogênico. Mesmo pequenas reduções nas emissões têm impacto direto no aquecimento global, pois ele persiste por séculos na atmosfera.</p>
+                <div class="card-back-tags">
+                  <span class="btag">Combustíveis fósseis</span>
+                  <span class="btag">Desmatamento</span>
+                  <span class="btag">Cimento</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 1: CH₄ -->
+        <div class="card-3d" data-index="1">
+          <div class="card-flipper">
+            <div class="card-face card-front">
+              <div class="card-inner">
+                <div class="card-header">
+                  <div class="card-molecule">🐄</div>
+                  <div class="card-formula">CH₄</div>
+                  <div class="card-neon-line green"></div>
+                </div>
+                <h3 class="card-title">Metano</h3>
+                <p class="card-body">25× mais potente que o CO₂ a longo prazo. Originado da pecuária, aterros sanitários, extração de petróleo e descongelamento do permafrost ártico.</p>
+                <div class="card-data">
+                  <div class="card-stat"><span>×25</span><small>Potência vs CO₂</small></div>
+                  <div class="card-stat"><span>16%</span><small>Das emissões</small></div>
+                </div>
+                <div class="card-click-hint">Clique para expandir ↗</div>
+                <div class="card-scan-line"></div>
+              </div>
+            </div>
+            <div class="card-face card-back" style="--back-accent:#00ff88">
+              <div class="card-back-inner">
+                <button class="card-close-btn" aria-label="Fechar">✕</button>
+                <div class="card-back-icon">🐄</div>
+                <div class="card-back-formula" style="color:#00ff88">CH₄</div>
+                <h3 class="card-back-title">Metano</h3>
+                <div class="card-back-details">
+                  <div class="detail-row"><span class="detail-label">Potência (100 anos)</span><span class="detail-value cyan">×25 CO₂</span></div>
+                  <div class="detail-row"><span class="detail-label">Potência (20 anos)</span><span class="detail-value warn">×80 CO₂</span></div>
+                  <div class="detail-row"><span class="detail-label">Duração atmosférica</span><span class="detail-value">~12 anos</span></div>
+                  <div class="detail-row"><span class="detail-label">Fonte principal</span><span class="detail-value">Pecuária (32%)</span></div>
+                </div>
+                <div class="card-back-divider"></div>
+                <p class="card-back-extra">Apesar de durar menos que o CO₂, o metano é muito mais potente no curto prazo. Reduzir emissões de CH₄ é uma das formas mais rápidas de desacelerar o aquecimento global.</p>
+                <div class="card-back-tags">
+                  <span class="btag">Agropecuária</span>
+                  <span class="btag">Aterros sanitários</span>
+                  <span class="btag">Permafrost</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: N₂O -->
+        <div class="card-3d" data-index="2">
+          <div class="card-flipper">
+            <div class="card-face card-front">
+              <div class="card-inner">
+                <div class="card-header">
+                  <div class="card-molecule">🌾</div>
+                  <div class="card-formula">N₂O</div>
+                  <div class="card-neon-line yellow"></div>
+                </div>
+                <h3 class="card-title">Óxido Nitroso</h3>
+                <p class="card-body">298× mais potente que o CO₂. Principal fonte: fertilizantes nitrogenados na agricultura, criação de animais e alguns processos industriais.</p>
+                <div class="card-data">
+                  <div class="card-stat"><span>×298</span><small>Potência vs CO₂</small></div>
+                  <div class="card-stat"><span>8%</span><small>Das emissões</small></div>
+                </div>
+                <div class="card-click-hint">Clique para expandir ↗</div>
+                <div class="card-scan-line"></div>
+              </div>
+            </div>
+            <div class="card-face card-back" style="--back-accent:#ffd700">
+              <div class="card-back-inner">
+                <button class="card-close-btn" aria-label="Fechar">✕</button>
+                <div class="card-back-icon">🌾</div>
+                <div class="card-back-formula" style="color:#ffd700">N₂O</div>
+                <h3 class="card-back-title">Óxido Nitroso</h3>
+                <div class="card-back-details">
+                  <div class="detail-row"><span class="detail-label">Potência (100 anos)</span><span class="detail-value warn">×298 CO₂</span></div>
+                  <div class="detail-row"><span class="detail-label">Duração atmosférica</span><span class="detail-value">~114 anos</span></div>
+                  <div class="detail-row"><span class="detail-label">Origem agrícola</span><span class="detail-value cyan">70% do total</span></div>
+                  <div class="detail-row"><span class="detail-label">Também destrói</span><span class="detail-value">Camada de ozônio</span></div>
+                </div>
+                <div class="card-back-divider"></div>
+                <p class="card-back-extra">O N₂O é liberado principalmente pelo solo quando fertilizantes nitrogenados são aplicados. Além do efeito estufa, ele destrói a camada de ozônio — dois problemas em um gás.</p>
+                <div class="card-back-tags">
+                  <span class="btag">Fertilizantes</span>
+                  <span class="btag">Pecuária</span>
+                  <span class="btag">Indústria química</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Desmatamento -->
+        <div class="card-3d" data-index="3">
+          <div class="card-flipper">
+            <div class="card-face card-front">
+              <div class="card-inner">
+                <div class="card-header">
+                  <div class="card-molecule">🌳</div>
+                  <div class="card-formula">🪚</div>
+                  <div class="card-neon-line red"></div>
+                </div>
+                <h3 class="card-title">Desmatamento</h3>
+                <p class="card-body">Florestas derrubadas liberam CO₂ armazenado por décadas e eliminam sumidouros naturais. A Amazônia sozinha absorve 2 bilhões de toneladas de CO₂/ano.</p>
+                <div class="card-data">
+                  <div class="card-stat"><span>10M ha</span><small>Perdidos/ano</small></div>
+                  <div class="card-stat"><span>11%</span><small>Das emissões globais</small></div>
+                </div>
+                <div class="card-click-hint">Clique para expandir ↗</div>
+                <div class="card-scan-line"></div>
+              </div>
+            </div>
+            <div class="card-face card-back" style="--back-accent:#ff2d2d">
+              <div class="card-back-inner">
+                <button class="card-close-btn" aria-label="Fechar">✕</button>
+                <div class="card-back-icon">🌳</div>
+                <div class="card-back-formula" style="color:#ff2d2d">DESMAT.</div>
+                <h3 class="card-back-title">Desmatamento</h3>
+                <div class="card-back-details">
+                  <div class="detail-row"><span class="detail-label">Área destruída/ano</span><span class="detail-value warn">10 milhões ha</span></div>
+                  <div class="detail-row"><span class="detail-label">Amazônia absorve</span><span class="detail-value cyan">2 Gt CO₂/ano</span></div>
+                  <div class="detail-row"><span class="detail-label">Contribuição climática</span><span class="detail-value">11% global</span></div>
+                  <div class="detail-row"><span class="detail-label">Espécies em risco</span><span class="detail-value warn">Milhares</span></div>
+                </div>
+                <div class="card-back-divider"></div>
+                <p class="card-back-extra">Cada árvore derrubada libera o CO₂ absorvido ao longo de décadas e elimina um futuro sumidouro de carbono. Proteger florestas é uma das medidas climáticas mais baratas e eficazes que existem.</p>
+                <div class="card-back-tags">
+                  <span class="btag">Amazônia</span>
+                  <span class="btag">Mata Atlântica</span>
+                  <span class="btag">Agropecuária</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Oceanos -->
+        <div class="card-3d" data-index="4">
+          <div class="card-flipper">
+            <div class="card-face card-front">
+              <div class="card-inner">
+                <div class="card-header">
+                  <div class="card-molecule">🌊</div>
+                  <div class="card-formula">pH↓</div>
+                  <div class="card-neon-line cyan"></div>
+                </div>
+                <h3 class="card-title">Oceanos</h3>
+                <p class="card-body">Os oceanos absorvem 30% do CO₂ emitido, mas se acidificam no processo. O pH caiu 0,1 unidade desde a Revolução Industrial, ameaçando corais e moluscos.</p>
+                <div class="card-data">
+                  <div class="card-stat"><span>−0.1</span><small>Queda no pH</small></div>
+                  <div class="card-stat"><span>50%</span><small>Corais em risco</small></div>
+                </div>
+                <div class="card-click-hint">Clique para expandir ↗</div>
+                <div class="card-scan-line"></div>
+              </div>
+            </div>
+            <div class="card-face card-back" style="--back-accent:#00d4ff">
+              <div class="card-back-inner">
+                <button class="card-close-btn" aria-label="Fechar">✕</button>
+                <div class="card-back-icon">🌊</div>
+                <div class="card-back-formula" style="color:#00d4ff">pH↓</div>
+                <h3 class="card-back-title">Oceanos</h3>
+                <div class="card-back-details">
+                  <div class="detail-row"><span class="detail-label">CO₂ absorvido</span><span class="detail-value cyan">30% das emissões</span></div>
+                  <div class="detail-row"><span class="detail-label">Acidificação</span><span class="detail-value warn">−0.1 pH desde 1850</span></div>
+                  <div class="detail-row"><span class="detail-label">Corais branqueados</span><span class="detail-value warn">50%+ em risco</span></div>
+                  <div class="detail-row"><span class="detail-label">Nível do mar</span><span class="detail-value">+3,7mm/ano</span></div>
+                </div>
+                <div class="card-back-divider"></div>
+                <p class="card-back-extra">Os oceanos são os maiores aliados do clima, mas têm um limite. A acidificação dissolve as conchas de crustáceos e corais — destruindo o berçário de 25% de toda a vida marinha.</p>
+                <div class="card-back-tags">
+                  <span class="btag">Acidificação</span>
+                  <span class="btag">Branqueamento</span>
+                  <span class="btag">Nível do mar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: Biodiversidade -->
+        <div class="card-3d" data-index="5">
+          <div class="card-flipper">
+            <div class="card-face card-front">
+              <div class="card-inner">
+                <div class="card-header">
+                  <div class="card-molecule">🦋</div>
+                  <div class="card-formula">EXT↑</div>
+                  <div class="card-neon-line purple"></div>
+                </div>
+                <h3 class="card-title">Biodiversidade</h3>
+                <p class="card-body">1 milhão de espécies ameaçadas de extinção. O clima muda mais rápido do que a maioria das espécies consegue se adaptar. Migrações e extinções estão se acelerando.</p>
+                <div class="card-data">
+                  <div class="card-stat"><span>1M</span><small>Espécies em risco</small></div>
+                  <div class="card-stat"><span>1000×</span><small>Taxa de extinção</small></div>
+                </div>
+                <div class="card-click-hint">Clique para expandir ↗</div>
+                <div class="card-scan-line"></div>
+              </div>
+            </div>
+            <div class="card-face card-back" style="--back-accent:#9b59b6">
+              <div class="card-back-inner">
+                <button class="card-close-btn" aria-label="Fechar">✕</button>
+                <div class="card-back-icon">🦋</div>
+                <div class="card-back-formula" style="color:#9b59b6">EXT↑</div>
+                <h3 class="card-back-title">Biodiversidade</h3>
+                <div class="card-back-details">
+                  <div class="detail-row"><span class="detail-label">Espécies ameaçadas</span><span class="detail-value warn">1 milhão</span></div>
+                  <div class="detail-row"><span class="detail-label">Taxa de extinção</span><span class="detail-value warn">1000× natural</span></div>
+                  <div class="detail-row"><span class="detail-label">Recifes em risco</span><span class="detail-value">+2°C = 99% perdido</span></div>
+                  <div class="detail-row"><span class="detail-label">Extinção 6ª em massa</span><span class="detail-value cyan">Em andamento</span></div>
+                </div>
+                <div class="card-back-divider"></div>
+                <p class="card-back-extra">Estamos vivendo a 6ª extinção em massa da Terra — a primeira causada por uma espécie. Cada espécie perdida enfraquece o ecossistema que sustenta nossa própria sobrevivência.</p>
+                <div class="card-back-tags">
+                  <span class="btag">Migração de espécies</span>
+                  <span class="btag">Descompasso fenológico</span>
+                  <span class="btag">Habitats</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6: Quissamã -->
+        <div class="card-3d" data-index="6">
+          <div class="card-flipper">
+            <div class="card-face card-front">
+              <div class="card-inner local-card">
+                <div class="card-header">
+                  <div class="card-molecule">📍</div>
+                  <div class="card-formula">RJ</div>
+                  <div class="card-neon-line orange"></div>
+                </div>
+                <h3 class="card-title">Quissamã / RJ</h3>
+                <p class="card-body">Restingas, lagoas costeiras e o litoral fluminense sofrem com calor extremo, enchentes e salinização. O Parque Nacional de Jurubatiba está sob pressão crescente.</p>
+                <div class="card-data">
+                  <div class="card-stat"><span>+2°C</span><small>Projeção regional</small></div>
+                  <div class="card-stat"><span>🏝️</span><small>Restinga ameaçada</small></div>
+                </div>
+                <div class="card-click-hint">Clique para expandir ↗</div>
+                <div class="card-scan-line"></div>
+              </div>
+            </div>
+            <div class="card-face card-back" style="--back-accent:#ff6b35">
+              <div class="card-back-inner">
+                <button class="card-close-btn" aria-label="Fechar">✕</button>
+                <div class="card-back-icon">📍</div>
+                <div class="card-back-formula" style="color:#ff6b35">RJ LOCAL</div>
+                <h3 class="card-back-title">Quissamã / RJ</h3>
+                <div class="card-back-details">
+                  <div class="detail-row"><span class="detail-label">Projeção temperatura</span><span class="detail-value warn">+2°C até 2100</span></div>
+                  <div class="detail-row"><span class="detail-label">P.N. Jurubatiba</span><span class="detail-value cyan">Único no mundo</span></div>
+                  <div class="detail-row"><span class="detail-label">Lagoas costeiras</span><span class="detail-value warn">Salinização crescente</span></div>
+                  <div class="detail-row"><span class="detail-label">Erosão costeira</span><span class="detail-value">Em aceleração</span></div>
+                </div>
+                <div class="card-back-divider"></div>
+                <p class="card-back-extra">O Parque Nacional da Restinga de Jurubatiba é o único parque nacional de restinga do Brasil. Suas lagoas e ecossistemas costeiros são altamente vulneráveis ao avanço do mar e à mudança climática.</p>
+                <div class="card-back-tags">
+                  <span class="btag">Restinga</span>
+                  <span class="btag">Jurubatiba</span>
+                  <span class="btag">Litoral fluminense</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-btn prev" id="carousel-prev" aria-label="Anterior">&#8249;</button>
+      <button class="carousel-btn next" id="carousel-next" aria-label="Próximo">&#8250;</button>
+
+      <div class="carousel-dots" id="carousel-dots">
+        <div class="c-dot active" data-dot="0"></div>
+        <div class="c-dot" data-dot="1"></div>
+        <div class="c-dot" data-dot="2"></div>
+        <div class="c-dot" data-dot="3"></div>
+        <div class="c-dot" data-dot="4"></div>
+        <div class="c-dot" data-dot="5"></div>
+        <div class="c-dot" data-dot="6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 7 — QUISSAMÃ E REGIÃO
+════════════════════════════════════════════ -->
+<section id="local" class="section local-section">
+  <div class="local-bg"></div>
+  <div class="local-content">
+    <div class="section-tag local">SEÇÃO 05</div>
+    <h2 class="section-title">Quissamã <em>& Região</em></h2>
+    <p class="section-lead">O efeito estufa não afeta apenas lugares distantes. Ecossistemas próximos de nós também sofrem mudanças profundas.</p>
+    <div class="inline-ods-badges">
+      <span class="iob" style="--c:#56C02B">ODS 15</span>
+      <span class="iob" style="--c:#26BDE2">ODS 6</span>
+      <span class="iob" style="--c:#0A97D9">ODS 14</span>
+      <span class="iob" style="--c:#3F7E44">ODS 13</span>
+    </div>
+
+    <div class="local-map-area">
+      <div class="map-container" id="local-map">
+        <div class="map-bg">
+          <div class="map-ocean"></div>
+          <div class="map-land"></div>
+          <div class="map-waves"></div>
+        </div>
+        <div class="map-pin" style="left:42%;top:38%" data-city="Quissamã">
+          <div class="pin-dot"></div>
+          <div class="pin-ring"></div>
+          <div class="pin-label">Quissamã</div>
+        </div>
+        <div class="map-pin" style="left:55%;top:42%" data-city="Macaé">
+          <div class="pin-dot"></div>
+          <div class="pin-ring"></div>
+          <div class="pin-label">Macaé</div>
+        </div>
+        <div class="map-pin" style="left:35%;top:30%" data-city="Carapebus">
+          <div class="pin-dot"></div>
+          <div class="pin-ring"></div>
+          <div class="pin-label">Carapebus</div>
+        </div>
+        <div class="map-pin" style="left:20%;top:25%" data-city="Campos dos Goytacazes">
+          <div class="pin-dot large"></div>
+          <div class="pin-ring"></div>
+          <div class="pin-label">Campos dos Goytacazes</div>
+        </div>
+        <div class="jurubatiba-area">
+          <div class="jurubatiba-glow"></div>
+          <span>🏝️ P.N. Restinga de Jurubatiba</span>
+        </div>
+        <div class="map-heat-wave"></div>
+        <div class="map-heat-wave w2"></div>
+      </div>
+    </div>
+
+    <div class="local-impacts">
+      <div class="local-card">
+        <div class="lc-icon">🌡️</div>
+        <h3>Calor Extremo</h3>
+        <p>Temperaturas recordes cada vez mais frequentes na região norte-fluminense, afetando saúde e agricultura.</p>
+      </div>
+      <div class="local-card">
+        <div class="lc-icon">🌊</div>
+        <h3>Impactos Costeiros</h3>
+        <p>Erosão da orla, avanço do mar e salinização de lagoas costeiras ameaçam comunidades e ecossistemas.</p>
+      </div>
+      <div class="local-card">
+        <div class="lc-icon">🌿</div>
+        <h3>Restingas</h3>
+        <p>A Restinga de Jurubatiba, bioma único, sofre com secas prolongadas e invasão de espécies exóticas.</p>
+      </div>
+      <div class="local-card">
+        <div class="lc-icon">🌧️</div>
+        <h3>Enchentes</h3>
+        <p>Chuvas irregulares e mais intensas causam alagamentos em Macaé e Campos dos Goytacazes.</p>
+      </div>
+      <div class="local-card">
+        <div class="lc-icon">🐠</div>
+        <h3>Lagoas Costeiras</h3>
+        <p>Lagoas de Quissamã e Carapebus perdem espécies nativas com o aumento da temperatura e salinização.</p>
+      </div>
+      <div class="local-card">
+        <div class="lc-icon">🌳</div>
+        <h3>Mata Atlântica</h3>
+        <p>Fragmentos da Mata Atlântica na região estão sob pressão crescente de secas e pressão humana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 8 — DADOS E GRÁFICOS
+════════════════════════════════════════════ -->
+<section id="data" class="section data-section">
+  <div class="data-content">
+    <div class="section-tag">SEÇÃO 06</div>
+    <h2 class="section-title">Dados & <em>Evidências</em></h2>
+    <p class="section-lead">Os números confirmam o que a ciência avisa há décadas. Veja a trajetória do planeta.</p>
+
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-label">🌡️ Temperatura Global (°C acima da média 1850–1900)</div>
+        <div class="chart-wrapper"><canvas id="tempChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-label">⚗️ CO₂ Atmosférico (ppm)</div>
+        <div class="chart-wrapper"><canvas id="co2Chart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-label">🧊 Extensão do Gelo Ártico (milhões km²)</div>
+        <div class="chart-wrapper"><canvas id="iceChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-label">🌊 Elevação do Nível do Mar (mm)</div>
+        <div class="chart-wrapper"><canvas id="seaChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 9 — SOLUÇÕES (FLIP CAROUSEL)
+════════════════════════════════════════════ -->
+<section id="solutions" class="section solutions-section">
+  <canvas id="leaves-canvas"></canvas>
+  <div class="solutions-content">
+    <div class="section-tag green">SEÇÃO 07</div>
+    <h2 class="section-title green-title">O Caminho de <em>Volta</em></h2>
+    <p class="section-lead">Ainda há tempo. Mas precisamos agir agora. Clique em um item para ver como você pode ajudar no dia a dia.</p>
+    <div class="inline-ods-badges">
+      <span class="iob" style="--c:#FCC30B">ODS 7</span>
+      <span class="iob" style="--c:#3F7E44">ODS 13</span>
+      <span class="iob" style="--c:#56C02B">ODS 15</span>
+      <span class="iob" style="--c:#BF8B2E">ODS 12</span>
+      <span class="iob" style="--c:#4C9F38">ODS 2</span>
+      <span class="iob" style="--c:#FD9D24">ODS 11</span>
+    </div>
+
+    <!-- FLIP CAROUSEL WRAPPER -->
+    <div class="flip-carousel-outer">
+      <!-- LEFT: card items list -->
+      <div class="flip-carousel-list" id="flip-carousel-list">
+
+        <div class="flip-item" data-idx="0">
+          <div class="flip-item-icon">☀️</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Energia Renovável</span>
+            <span class="flip-item-sub">73% da nova capacidade elétrica em 2023</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="1">
+          <div class="flip-item-icon">🌱</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Reflorestamento</span>
+            <span class="flip-item-sub">Meta global: +1 trilhão de árvores</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="2">
+          <div class="flip-item-icon">🚲</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Mobilidade Limpa</span>
+            <span class="flip-item-sub">18% de crescimento em EVs em 2023</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="3">
+          <div class="flip-item-icon">♻️</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Economia Circular</span>
+            <span class="flip-item-sub">Potencial: −39% das emissões globais</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="4">
+          <div class="flip-item-icon">🌾</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Agricultura Sustentável</span>
+            <span class="flip-item-sub">10% das emissões podem ser evitadas</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="5">
+          <div class="flip-item-icon">🏙️</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Cidades Inteligentes</span>
+            <span class="flip-item-sub">40% das emissões vêm de edifícios</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: detail panel (Xbox-style unlock reveal) -->
+      <div class="flip-detail-panel" id="flip-detail-panel">
+        <div class="flip-detail-idle">
+          <div class="flip-idle-icon">🌍</div>
+          <p>Selecione um item<br>para ver detalhes</p>
+        </div>
+
+        <!-- Each detail card (hidden by default) -->
+        <div class="flip-detail-card" data-detail="0">
+          <div class="flip-detail-badge">☀️</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Energia Renovável</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>73%</span><small>Nova capacidade</small></div>
+            <div class="flip-detail-stat"><span>−76%</span><small>Custo solar 10 anos</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Instale painéis solares ou entre em cooperativa de energia solar</li>
+            <li>Troque lâmpadas por LED — usa 75% menos energia</li>
+            <li>Desconecte aparelhos da tomada quando não estiver usando</li>
+            <li>Escolha fornecedoras de energia renovável ao contratar serviço</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:70%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="1">
+          <div class="flip-detail-badge">🌱</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Reflorestamento</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>205Gt</span><small>CO₂ capturado</small></div>
+            <div class="flip-detail-stat"><span>1 tri</span><small>Árvores necessárias</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Plante uma árvore nativa no seu bairro ou condomínio</li>
+            <li>Apoie ONGs de reflorestamento como SOS Mata Atlântica</li>
+            <li>Reduza o consumo de papel — cada folha = uma fração de árvore</li>
+            <li>Cuide de plantas em casa — até vasos ajudam o microclima urbano</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:55%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="2">
+          <div class="flip-detail-badge">🚲</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Mobilidade Limpa</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>16%</span><small>Emissões transporte</small></div>
+            <div class="flip-detail-stat"><span>×18</span><small>Crescimento EVs</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Use bicicleta ou caminhe em trajetos curtos (até 5km)</li>
+            <li>Prefira transporte público ao carro individual</li>
+            <li>Carona solidária com colegas de trabalho ou escola</li>
+            <li>Ao trocar de veículo, considere elétrico ou híbrido</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:80%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="3">
+          <div class="flip-detail-badge">♻️</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Economia Circular</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>−39%</span><small>Emissões possíveis</small></div>
+            <div class="flip-detail-stat"><span>8%</span><small>Reciclado no Brasil</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Separe o lixo reciclável — papel, plástico, vidro e metal</li>
+            <li>Compre produtos de segunda mão ou repare em vez de jogar fora</li>
+            <li>Evite descartáveis: use garrafinha, sacola reutilizável e canudo de bambu</li>
+            <li>Faça compostagem com restos orgânicos para reduzir metano em aterros</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:60%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="4">
+          <div class="flip-detail-badge">🌾</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Agricultura Sustentável</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>10%</span><small>Emissões evitáveis</small></div>
+            <div class="flip-detail-stat"><span>−3kg</span><small>CO₂/kg carne bovina</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Reduza o consumo de carne vermelha — é a maior fonte individual de emissões</li>
+            <li>Compre alimentos locais e da estação — menos transporte e armazenamento</li>
+            <li>Plante uma hortinha em casa ou varandinha com temperos</li>
+            <li>Evite desperdício de comida — 1/3 dos alimentos produzidos são descartados</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:85%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="5">
+          <div class="flip-detail-badge">🏙️</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Cidades Inteligentes</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>40%</span><small>Emissões edifícios</small></div>
+            <div class="flip-detail-stat"><span>−30%</span><small>Com eficiência</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Use ar-condicionado com moderação — cada grau a mais usa 8% mais energia</li>
+            <li>Prefira produtos com menor consumo energético (selos A e A+)</li>
+            <li>Apoie projetos de mobilidade urbana e ciclofaixas no seu município</li>
+            <li>Participe de conselhos locais e vote em candidatos comprometidos com o clima</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:50%"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+     
+<!-- ═══════════════════════════════════════════
+     FINAL
+════════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION ODS — OBJETIVOS DE DESENVOLVIMENTO SUSTENTÁVEL
+════════════════════════════════════════════════════ -->
+<section id="ods" class="section ods-section">
+  <div class="ods-content">
+    <div class="section-tag ods-tag">AGENDA 2030 · ONU</div>
+    <h2 class="section-title ods-title">Objetivos de <em>Desenvolvimento</em><br>Sustentável</h2>
+    <p class="section-lead ods-lead">Em 2015, a ONU lançou 17 ODS com metas para acabar com a pobreza e construir um futuro sustentável até 2030. Veja como cada objetivo se relaciona com o <strong>efeito estufa e o clima</strong>.</p>
+
+    <!-- LEGENDA DE RELEVÂNCIA -->
+    <div class="ods-legend">
+      <span class="ods-rel-dot high"></span><span>Alta relação com o clima</span>
+      <span class="ods-rel-dot mid"></span><span>Relação indireta</span>
+      <span class="ods-rel-dot low"></span><span>Suporte estrutural</span>
+    </div>
+
+    <div class="ods-grid">
+
+      <!-- ODS 1 -->
+      <div class="ods-card" data-rel="mid" style="--ods-color:#E5243B">
+        <div class="ods-card-num">1</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">👨‍👩‍👧‍👦</div>
+          <h4>Erradicação da Pobreza</h4>
+          <p>Comunidades pobres são as mais vulneráveis às mudanças climáticas — enchentes, secas e calor extremo afetam quem não tem recursos para se adaptar.</p>
+          <div class="ods-climate-tag">🌡️ Populações em risco climático</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:60%"></div>
+      </div>
+
+      <!-- ODS 2 -->
+      <div class="ods-card" data-rel="high" style="--ods-color:#DDA63A">
+        <div class="ods-card-num">2</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🌾</div>
+          <h4>Fome Zero e Agricultura Sustentável</h4>
+          <p>O aquecimento global ameaça colheitas e segurança alimentar. Agriculturas sustentáveis reduzem emissões de CH₄ e N₂O — dois potentes gases estufa.</p>
+          <div class="ods-climate-tag">🌡️ Emissões agrícolas: 10% do total global</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:80%"></div>
+      </div>
+
+      <!-- ODS 3 -->
+      <div class="ods-card" data-rel="mid" style="--ods-color:#4C9F38">
+        <div class="ods-card-num">3</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">💚</div>
+          <h4>Saúde e Bem-Estar</h4>
+          <p>O calor extremo aumenta doenças respiratórias, cardiovasculares e a proliferação de vetores como dengue e malária em regiões como o norte fluminense.</p>
+          <div class="ods-climate-tag">🌡️ +1°C = +3% em internações por calor</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:70%"></div>
+      </div>
+
+      <!-- ODS 4 -->
+      <div class="ods-card" data-rel="low" style="--ods-color:#C5192D">
+        <div class="ods-card-num">4</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">📚</div>
+          <h4>Educação de Qualidade</h4>
+          <p>Educação ambiental e climática é a base da consciência coletiva. Trabalhos como este fazem parte desta ODS — disseminar conhecimento gera mudança de comportamento.</p>
+          <div class="ods-climate-tag">📘 Este trabalho contribui com a ODS 4</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:45%"></div>
+      </div>
+
+      <!-- ODS 5 -->
+      <div class="ods-card" data-rel="low" style="--ods-color:#FF3A21">
+        <div class="ods-card-num">5</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">⚧️</div>
+          <h4>Igualdade de Gênero</h4>
+          <p>Mulheres e meninas são desproporcionalmente afetadas por desastres climáticos e crises de recursos hídricos, especialmente em países em desenvolvimento.</p>
+          <div class="ods-climate-tag">🌡️ 80% dos deslocados climáticos são mulheres</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:40%"></div>
+      </div>
+
+      <!-- ODS 6 -->
+      <div class="ods-card" data-rel="high" style="--ods-color:#26BDE2">
+        <div class="ods-card-num">6</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">💧</div>
+          <h4>Água Potável e Saneamento</h4>
+          <p>O aquecimento altera o ciclo hidrológico — secas prolongadas e chuvas intensas comprometem a disponibilidade de água doce. As lagoas de Quissamã são diretamente afetadas.</p>
+          <div class="ods-climate-tag">🌡️ Quissamã: lagoas costeiras em risco</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:85%"></div>
+      </div>
+
+      <!-- ODS 7 -->
+      <div class="ods-card ods-highlight" data-rel="high" style="--ods-color:#FCC30B">
+        <div class="ods-card-num">7</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">☀️</div>
+          <h4>Energia Limpa e Acessível</h4>
+          <p>A transição de combustíveis fósseis para renováveis é a principal ferramenta para reduzir emissões de CO₂. Solar e eólica já são as fontes mais baratas do planeta.</p>
+          <div class="ods-climate-tag">🌡️ 76% das emissões vêm do setor energético</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:95%"></div>
+      </div>
+
+      <!-- ODS 8 -->
+      <div class="ods-card" data-rel="mid" style="--ods-color:#A21942">
+        <div class="ods-card-num">8</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">📈</div>
+          <h4>Trabalho Decente e Crescimento Econômico</h4>
+          <p>A economia verde gera empregos sustentáveis. A transição climática pode criar 24 milhões de novos postos de trabalho até 2030, segundo a OIT.</p>
+          <div class="ods-climate-tag">🌡️ 24M empregos verdes até 2030 (OIT)</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:55%"></div>
+      </div>
+
+      <!-- ODS 9 -->
+      <div class="ods-card" data-rel="mid" style="--ods-color:#FD6925">
+        <div class="ods-card-num">9</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🏗️</div>
+          <h4>Indústria, Inovação e Infraestrutura</h4>
+          <p>Infraestruturas resilientes ao clima e inovações como captura de carbono, baterias e hidrogênio verde são essenciais para a descarbonização industrial.</p>
+          <div class="ods-climate-tag">🌡️ Indústria = 21% das emissões globais</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:65%"></div>
+      </div>
+
+      <!-- ODS 10 -->
+      <div class="ods-card" data-rel="mid" style="--ods-color:#DD1367">
+        <div class="ods-card-num">10</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">⚖️</div>
+          <h4>Redução das Desigualdades</h4>
+          <p>Países menos desenvolvidos emitem menos CO₂, mas sofrem mais os impactos climáticos. Justiça climática é inseparável da redução de desigualdades globais.</p>
+          <div class="ods-climate-tag">🌡️ Injustiça climática: quem polui menos sofre mais</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:60%"></div>
+      </div>
+
+      <!-- ODS 11 -->
+      <div class="ods-card" data-rel="high" style="--ods-color:#FD9D24">
+        <div class="ods-card-num">11</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🏙️</div>
+          <h4>Cidades e Comunidades Sustentáveis</h4>
+          <p>Cidades consomem 78% da energia global. Mobilidade urbana limpa, telhados verdes, ilhas de calor e eficiência energética são centrais para a agenda climática.</p>
+          <div class="ods-climate-tag">🌡️ Ilhas de calor urbanas: +3°C a +5°C</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:80%"></div>
+      </div>
+
+      <!-- ODS 12 -->
+      <div class="ods-card" data-rel="high" style="--ods-color:#BF8B2E">
+        <div class="ods-card-num">12</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">♻️</div>
+          <h4>Consumo e Produção Responsáveis</h4>
+          <p>A economia circular pode reduzir 39% das emissões globais. Cada produto tem uma pegada de carbono desde a produção até o descarte — consumir menos e melhor é essencial.</p>
+          <div class="ods-climate-tag">🌡️ Economia circular: −39% emissões</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:85%"></div>
+      </div>
+
+      <!-- ODS 13 -->
+      <div class="ods-card ods-highlight" data-rel="high" style="--ods-color:#3F7E44">
+        <div class="ods-card-num">13</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🌍</div>
+          <h4>Ação Contra a Mudança Global do Clima</h4>
+          <p>Esta é <strong>a ODS central deste trabalho</strong>. Reduzir emissões de gases estufa, fortalecer resiliência climática e implementar o Acordo de Paris são seus pilares.</p>
+          <div class="ods-climate-tag">🎯 ODS diretamente relacionada a este trabalho</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:100%"></div>
+      </div>
+
+      <!-- ODS 14 -->
+      <div class="ods-card ods-highlight" data-rel="high" style="--ods-color:#0A97D9">
+        <div class="ods-card-num">14</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🌊</div>
+          <h4>Vida na Água</h4>
+          <p>A acidificação dos oceanos (−0,1 pH desde 1850) e o aquecimento das águas ameaçam corais, peixes e toda a cadeia marinha. 50% dos recifes de coral já estão branqueados.</p>
+          <div class="ods-climate-tag">🌡️ 50% dos corais em risco de extinção</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:90%"></div>
+      </div>
+
+      <!-- ODS 15 -->
+      <div class="ods-card ods-highlight" data-rel="high" style="--ods-color:#56C02B">
+        <div class="ods-card-num">15</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🌳</div>
+          <h4>Vida Terrestre</h4>
+          <p>O desmatamento libera CO₂ e elimina sumidouros naturais. A Restinga de Jurubatiba (Quissamã) é um ecossistema ameaçado que sequestra carbono e abriga biodiversidade única.</p>
+          <div class="ods-climate-tag">🌡️ Floresta = sumidouro de carbono</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:90%"></div>
+      </div>
+
+      <!-- ODS 16 -->
+      <div class="ods-card" data-rel="low" style="--ods-color:#00689D">
+        <div class="ods-card-num">16</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🕊️</div>
+          <h4>Paz, Justiça e Instituições Eficazes</h4>
+          <p>Conflitos por recursos (água, terra) são agravados pelo clima. Governança ambiental eficaz — acordos internacionais, legislação e fiscalização — é essencial para a ação climática.</p>
+          <div class="ods-climate-tag">🌡️ Clima como fator de conflitos globais</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:50%"></div>
+      </div>
+
+      <!-- ODS 17 -->
+      <div class="ods-card" data-rel="mid" style="--ods-color:#19486A">
+        <div class="ods-card-num">17</div>
+        <div class="ods-card-body">
+          <div class="ods-icon">🤝</div>
+          <h4>Parcerias e Meios de Implementação</h4>
+          <p>Nenhuma ODS pode ser alcançada sozinha. O financiamento climático, a transferência de tecnologia e a cooperação internacional são fundamentais para a Agenda 2030.</p>
+          <div class="ods-climate-tag">🌡️ US$ 100 bi/ano prometidos para o clima (COP)</div>
+        </div>
+        <div class="ods-rel-bar" style="--rel:55%"></div>
+      </div>
+
+    </div><!-- /ods-grid -->
+
+    <!-- REFERÊNCIA BIBLIOGRÁFICA -->
+    <div class="ods-reference">
+      <span class="ods-ref-icon">📖</span>
+      <p><strong>Fonte:</strong> ORGANIZAÇÃO DAS NAÇÕES UNIDAS. <em>Sobre o nosso trabalho para alcançar os Objetivos de Desenvolvimento Sustentável no Brasil.</em> Disponível em: https://brasil.un.org/pt-br/sdgs. Acesso em: 22 set. 2024.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="final" class="section final-section">
+  <canvas id="final-canvas"></canvas>
+  <div class="final-content">
+    <div class="final-quote">
+      <p class="quote-line">"O futuro da Terra</p>
+      <p class="quote-line">não depende do planeta.</p>
+      <p class="quote-line accent-line">Depende de quem vive nele."</p>
+    </div>
+    <div class="final-cta">
+      <button class="restart-btn" id="restart-btn">
+        <span>↑ Recomeçar</span>
+      </button>
+      <div class="final-credits">
+        <p>Trabalho sobre Efeito Estufa e Impactos Biológicos</p>
+        <p class="credits-sub">Conexão com Quissamã/RJ e ecossistemas locais</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Card expand modal — FORA do contexto 3D para evitar bug do transform -->
+<div id="card-expand-modal" role="dialog" aria-modal="true">
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar">✕</button>
+    <div class="modal-inner" id="modal-inner">
+      <!-- conteúdo injetado via JS -->
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
