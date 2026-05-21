@@ -36,9 +36,11 @@ function initAll() {
   initCharts();
   initLeavesCanvas();
   initFinalCanvas();
+  initInteractiveMap();
   initRestartBtn();
   initNavToggle();
   initFlipCarousel();
+  initVoting();
 }
 
 /* ─── NAVBAR ──────────────────────────────────────────── */
@@ -911,6 +913,324 @@ function initFinalCanvas() {
   draw();
 }
 
+/* ─── MAPA INTERATIVO — CIDADES ───────────────────────── */
+const CITY_DATA = {
+  quissama: {
+    name: 'Quissamã',
+    icon: '📍',
+    region: 'Norte Fluminense · RJ · Nossa cidade',
+    stats: [
+      { val: '+2°C',    lbl: 'Projeção até 2100' },
+      { val: '54 mil',  lbl: 'Habitantes' },
+      { val: '720 km²', lbl: 'Área total' },
+      { val: '100%',    lbl: 'Litoral em risco' },
+    ],
+    impacts: [
+      { icon: '🌊', text: 'Erosão costeira acelerada ameaça a orla e comunidades pesqueiras.' },
+      { icon: '🏝️', text: 'P.N. Restinga de Jurubatiba sofre com secas prolongadas e invasão de espécies.' },
+      { icon: '🐠', text: 'Lagoas costeiras com salinização crescente, comprometendo peixes nativos.' },
+      { icon: '🌡️', text: 'Ondas de calor mais frequentes afetam saúde e agricultura local.' },
+    ],
+    eco: [
+      { icon: '🏝️', text: 'P.N. Restinga de Jurubatiba — único parque nacional de restinga do Brasil.' },
+      { icon: '💧', text: 'Lagoas costeiras: Lagoa de Quissamã, Lagoa Comprida e outras 8 lagoas interligadas.' },
+      { icon: '🌿', text: 'Restinga: vegetação adaptada à areia e salinidade, habitat exclusivo.' },
+      { icon: '🐦', text: 'Mais de 200 espécies de aves registradas — área de importância para migratórias.' },
+    ],
+    actions: [
+      { icon: '♻️', text: 'Separe resíduos e apoie a coleta seletiva no município.' },
+      { icon: '🌱', text: 'Replante espécies nativas de restinga em áreas degradadas.' },
+      { icon: '📣', text: 'Denuncie desmatamento e pesca irregular nas lagoas ao IBAMA.' },
+      { icon: '🚶', text: 'Reduza o uso de carro para deslocamentos curtos na cidade.' },
+    ],
+    ods: ['ODS 13', 'ODS 14', 'ODS 15', 'ODS 6'],
+    color: '#00d4ff',
+  },
+  carapebus: {
+    name: 'Carapebus',
+    icon: '🌿',
+    region: 'Norte Fluminense · RJ',
+    stats: [
+      { val: '+1.8°C',   lbl: 'Projeção até 2100' },
+      { val: '15 mil',   lbl: 'Habitantes' },
+      { val: '308 km²',  lbl: 'Área total' },
+      { val: '2 lagoas', lbl: 'Ecossistemas em risco' },
+    ],
+    impacts: [
+      { icon: '🏝️', text: 'Abriga parte do P.N. Restinga de Jurubatiba, com ecossistemas únicos.' },
+      { icon: '💧', text: 'Lagoa de Carapebus e Lagoa Comprida sofrem avanço de salinidade.' },
+      { icon: '🌾', text: 'Agricultura familiar impactada por chuvas irregulares e secas.' },
+      { icon: '🐦', text: 'Aves migratórias perdem habitat com a degradação das lagoas.' },
+    ],
+    eco: [
+      { icon: '💧', text: 'Lagoa de Carapebus e Lagoa Comprida: ecossistemas de água doce ameaçados.' },
+      { icon: '🌿', text: 'Faz parte do corredor ecológico do P.N. Restinga de Jurubatiba.' },
+      { icon: '🐸', text: 'Grande diversidade de anfíbios e répteis nas áreas úmidas.' },
+      { icon: '🌾', text: 'Zona de amortecimento do parque: agricultura e conservação coexistindo.' },
+    ],
+    actions: [
+      { icon: '🌱', text: 'Apoie programas de educação ambiental nas escolas da cidade.' },
+      { icon: '💧', text: 'Use água com responsabilidade — as lagoas dependem do equilíbrio hídrico.' },
+      { icon: '🚫', text: 'Evite descartar lixo nas margens das lagoas.' },
+      { icon: '🤝', text: 'Participe de mutirões de limpeza e reflorestamento local.' },
+    ],
+    ods: ['ODS 15', 'ODS 14', 'ODS 2', 'ODS 6'],
+    color: '#00ff88',
+  },
+  campos: {
+    name: 'Campos dos Goytacazes',
+    icon: '🏙️',
+    region: 'Norte Fluminense · RJ · Maior cidade da região',
+    stats: [
+      { val: '+2.2°C',     lbl: 'Projeção até 2100' },
+      { val: '507 mil',    lbl: 'Habitantes' },
+      { val: '4.027 km²',  lbl: 'Área total' },
+      { val: 'Rio Paraíba', lbl: 'Recurso hídrico em risco' },
+    ],
+    impacts: [
+      { icon: '🌊', text: 'Rio Paraíba do Sul com volume reduzido por secas e uso intensivo.' },
+      { icon: '🌧️', text: 'Enchentes urbanas mais frequentes com chuvas concentradas.' },
+      { icon: '🌡️', text: 'Ilha de calor urbana intensa — +4°C a +6°C em relação ao entorno rural.' },
+      { icon: '🌾', text: 'Cana-de-açúcar e pecuária regionais ameaçadas por irregularidade hídrica.' },
+    ],
+    eco: [
+      { icon: '🌊', text: 'Rio Paraíba do Sul: principal rio do norte fluminense, cada vez mais ameaçado.' },
+      { icon: '🌳', text: 'Fragmentos de Mata Atlântica em processo acelerado de degradação.' },
+      { icon: '🐊', text: 'Jacarés e capivaras habitam as várzeas do Paraíba, mas perdem espaço.' },
+      { icon: '🌾', text: 'Maior polo sucroalcooleiro do estado — setor vulnerável à seca.' },
+    ],
+    actions: [
+      { icon: '🚇', text: 'Priorize transporte coletivo na cidade para reduzir emissões.' },
+      { icon: '💡', text: 'Invista em eficiência energética em residências e comércios.' },
+      { icon: '🌳', text: 'Apoie a arborização urbana para combater o efeito ilha de calor.' },
+      { icon: '📊', text: 'Cobre planos municipais de adaptação climática dos representantes eleitos.' },
+    ],
+    ods: ['ODS 11', 'ODS 13', 'ODS 6', 'ODS 3'],
+    color: '#ff6b35',
+  },
+  macae: {
+    name: 'Macaé',
+    icon: '🛢️',
+    region: 'Norte Fluminense · RJ · Polo do Petróleo',
+    stats: [
+      { val: '+1.9°C',  lbl: 'Projeção até 2100' },
+      { val: '239 mil', lbl: 'Habitantes' },
+      { val: '1.216 km²', lbl: 'Área total' },
+      { val: '36 km',   lbl: 'Litoral ameaçado' },
+    ],
+    impacts: [
+      { icon: '🌊', text: 'Costa com erosão acelerada; bairros litorâneos em risco de inundação.' },
+      { icon: '🛢️', text: 'Polo do petróleo exposto a eventos climáticos extremos.' },
+      { icon: '🌧️', text: 'Enchentes urbanas recorrentes em áreas de baixada.' },
+      { icon: '🐠', text: 'Recifes costeiros e manguezais com branqueamento e degradação.' },
+    ],
+    eco: [
+      { icon: '🌊', text: 'Manguezais do estuário do Rio Macaé: berçário de peixes e caranguejos.' },
+      { icon: '🐠', text: 'Recifes artificiais e naturais ao largo da costa, ricos em biodiversidade.' },
+      { icon: '🌿', text: 'Restinga da Barra de Macaé: fragmento costeiro ainda preservado.' },
+      { icon: '🐢', text: 'Praias de desova de tartarugas marinhas monitoradas pelo Projeto Tamar.' },
+    ],
+    actions: [
+      { icon: '🏭', text: 'Pressione pela transição da economia do petróleo para energias renováveis.' },
+      { icon: '🐠', text: 'Apoie projetos de monitoramento de recifes e tartarugas marinhas.' },
+      { icon: '🌊', text: 'Participe de limpezas de praia para reduzir plástico no oceano.' },
+      { icon: '☀️', text: 'Instale painéis solares — Macaé tem alto índice de irradiação solar.' },
+    ],
+    ods: ['ODS 11', 'ODS 9', 'ODS 13', 'ODS 14'],
+    color: '#ffd700',
+  },
+  rioostras: {
+    name: 'Rio das Ostras',
+    icon: '🦪',
+    region: 'Norte Fluminense · RJ',
+    stats: [
+      { val: '+1.8°C',  lbl: 'Projeção até 2100' },
+      { val: '130 mil', lbl: 'Habitantes' },
+      { val: '228 km²', lbl: 'Área total' },
+      { val: '22 km',   lbl: 'Litoral em risco' },
+    ],
+    impacts: [
+      { icon: '🦪', text: 'Cultivo de ostras afetado pela acidificação e aquecimento do oceano.' },
+      { icon: '🌊', text: 'Ressaca do mar mais intensa, atingindo avenidas e residências.' },
+      { icon: '🏖️', text: 'Praias com perda de areia acelerada por erosão costeira.' },
+      { icon: '🐟', text: 'Pesca artesanal em declínio com mudança nos cardumes.' },
+    ],
+    eco: [
+      { icon: '🦪', text: 'Rio das Ostras: referência histórica na aquicultura de bivalves.' },
+      { icon: '🌿', text: 'Lagoa de Imboacica: área de proteção ambiental com vegetação nativa.' },
+      { icon: '🐟', text: 'Rio das Ostras e Rio Iriri: importantes para a pesca artesanal local.' },
+      { icon: '🌊', text: 'Costa rochosa alternada com praias arenosas — alta diversidade de habitat.' },
+    ],
+    actions: [
+      { icon: '🦪', text: 'Consuma mariscos cultivados localmente e de forma sustentável.' },
+      { icon: '🏖️', text: 'Participe de campanhas contra construções irregulares na orla.' },
+      { icon: '🚫', text: 'Evite plástico descartável — ele chega ao mar e afeta a vida marinha.' },
+      { icon: '📸', text: 'Registre e denuncie casos de erosão e descarte irregular de resíduos.' },
+    ],
+    ods: ['ODS 14', 'ODS 2', 'ODS 13', 'ODS 11'],
+    color: '#9b59b6',
+  },
+};
+
+function initInteractiveMap() {
+  const cities    = document.querySelectorAll('.map-city');
+  const panel     = document.getElementById('city-info-panel');
+  const idleEl    = document.getElementById('cip-idle');
+  const contentEl = document.getElementById('cip-content');
+  const closeBtn  = document.getElementById('cip-close');
+  const mapHint   = document.getElementById('map-hint');
+  if (!cities.length || !panel) return;
+
+  const BASE_R = { 'large-dot': 8, 'medium-dot': 7, 'highlight-dot': 9, default: 6 };
+  const SEL_R  = { 'large-dot': 12,'medium-dot': 11,'highlight-dot': 13, default: 10 };
+  function getDotR(dot, table) {
+    for (const cls of Object.keys(table)) if (dot.classList.contains(cls)) return table[cls];
+    return table.default;
+  }
+
+  // Hover tooltip
+  const hoverTip = document.createElement('div');
+  hoverTip.style.cssText = `position:fixed;display:none;pointer-events:none;z-index:700;
+    background:rgba(3,8,20,0.97);border:1px solid rgba(255,215,0,0.45);
+    border-radius:8px;padding:6px 14px;font-family:'Space Mono',monospace;
+    font-size:0.65rem;color:#ffd700;letter-spacing:0.06em;
+    box-shadow:0 4px 20px rgba(0,0,0,0.6);white-space:nowrap;
+    backdrop-filter:blur(10px);transform:translate(-50%,-140%);`;
+  document.body.appendChild(hoverTip);
+
+  // Tab switching
+  const tabBtns   = document.querySelectorAll('.cip-tab');
+  const tabPanels = document.querySelectorAll('.cip-panel');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const target = document.getElementById(`cip-panel-${btn.dataset.tab}`);
+      if (target) target.classList.add('active');
+    });
+  });
+
+  function renderList(items, cls, iconCls) {
+    return items.map(i =>
+      `<div class="${cls}"><span class="${iconCls}">${i.icon}</span><span>${i.text}</span></div>`
+    ).join('');
+  }
+
+  function showCity(key) {
+    const d = CITY_DATA[key];
+    if (!d) return;
+
+    // Reset dots
+    cities.forEach(c => {
+      c.classList.remove('selected');
+      const dot = c.querySelector('.city-dot, .highlight-dot');
+      if (dot) dot.setAttribute('r', getDotR(dot, BASE_R));
+    });
+    const sel = document.querySelector(`.map-city[data-city="${key}"]`);
+    if (sel) {
+      sel.classList.add('selected');
+      const dot = sel.querySelector('.city-dot, .highlight-dot');
+      if (dot) dot.setAttribute('r', getDotR(dot, SEL_R));
+    }
+
+    // Update accent color
+    panel.style.borderLeftColor = d.color + '99';
+    tabBtns.forEach(b => b.style.setProperty('--tab-active', d.color));
+
+    // Header
+    document.getElementById('cip-icon').textContent   = d.icon;
+    document.getElementById('cip-name').textContent   = d.name;
+    document.getElementById('cip-region').textContent = d.region;
+
+    // Tab: Dados
+    document.getElementById('cip-stats').innerHTML = d.stats.map(s =>
+      `<div class="cip-stat" style="border-color:${d.color}33">
+        <span class="cip-stat-val" style="color:${d.color}">${s.val}</span>
+        <span class="cip-stat-lbl">${s.lbl}</span>
+      </div>`
+    ).join('');
+    document.getElementById('cip-ods-row').innerHTML =
+      `<div class="cip-divider-label" style="margin-top:0.5rem">ODS RELACIONADAS</div>
+       <div class="cip-ods-badges">` +
+      d.ods.map(o =>
+        `<span class="cip-ods-badge" style="border-color:${d.color}55;color:${d.color};background:${d.color}11">${o}</span>`
+      ).join('') + `</div>`;
+
+    // Tab: Riscos
+    document.getElementById('cip-impacts').innerHTML =
+      `<div class="cip-divider-label">IMPACTOS CLIMÁTICOS</div>` +
+      renderList(d.impacts, 'cip-impact-item', 'cip-impact-icon');
+
+    // Tab: Ecossistema
+    document.getElementById('cip-eco').innerHTML =
+      `<div class="cip-divider-label">ECOSSISTEMAS</div>` +
+      renderList(d.eco, 'cip-eco-item', 'cip-eco-icon');
+
+    // Tab: Ações
+    document.getElementById('cip-actions').innerHTML =
+      `<div class="cip-divider-label">O QUE FAZER</div>` +
+      renderList(d.actions, 'cip-action-item', 'cip-action-icon');
+
+    // Reset to first tab
+    tabBtns.forEach(b => b.classList.remove('active'));
+    tabPanels.forEach(p => p.classList.remove('active'));
+    tabBtns[0]?.classList.add('active');
+    document.getElementById('cip-panel-dados')?.classList.add('active');
+
+    // Show content
+    idleEl.style.display = 'none';
+    contentEl.classList.add('visible');
+    if (mapHint) mapHint.classList.add('hidden');
+  }
+
+  function hideCity() {
+    cities.forEach(c => {
+      c.classList.remove('selected');
+      const dot = c.querySelector('.city-dot, .highlight-dot');
+      if (dot) dot.setAttribute('r', getDotR(dot, BASE_R));
+    });
+    panel.style.borderLeftColor = 'rgba(255,215,0,0.15)';
+    contentEl.classList.remove('visible');
+    idleEl.style.display = 'flex';
+    if (mapHint) mapHint.classList.remove('hidden');
+  }
+
+  cities.forEach(city => {
+    const key = city.dataset.city;
+    const d = CITY_DATA[key];
+    if (!d) return;
+    city.addEventListener('click', () => showCity(key));
+    city.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') showCity(key); });
+    city.addEventListener('mouseenter', e => {
+      hoverTip.textContent = `${d.icon}  ${d.name}`;
+      hoverTip.style.display = 'block';
+    });
+    city.addEventListener('mousemove', e => {
+      hoverTip.style.left = e.clientX + 'px';
+      hoverTip.style.top  = e.clientY + 'px';
+    });
+    city.addEventListener('mouseleave', () => { hoverTip.style.display = 'none'; });
+  });
+
+  // Chips in idle state
+  document.querySelectorAll('.cip-idle-chip').forEach(chip => {
+    chip.addEventListener('click', () => showCity(chip.dataset.target));
+  });
+
+  closeBtn?.addEventListener('click', hideCity);
+
+  // Auto-open Quissamã when section enters view
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      setTimeout(() => showCity('quissama'), 600);
+      observer.disconnect();
+    }
+  }, { threshold: 0.3 });
+  const localSection = document.getElementById('local');
+  if (localSection) observer.observe(localSection);
+}
+
 /* ─── RESTART BUTTON ──────────────────────────────────── */
 function initRestartBtn() {
   const btn = document.getElementById('restart-btn');
@@ -919,6 +1239,60 @@ function initRestartBtn() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+}
+
+/* ─── VOTAÇÃO INTERATIVA (CONCLUSÃO) ──────────────────── */
+function initVoting() {
+  const votes = { sim: 0, nao: 0, parcial: 0 };
+  let voted = false;
+
+  const btns = {
+    sim:     document.getElementById('vote-sim'),
+    nao:     document.getElementById('vote-nao'),
+    parcial: document.getElementById('vote-parcial'),
+  };
+  const counts = {
+    sim:     document.getElementById('count-sim'),
+    nao:     document.getElementById('count-nao'),
+    parcial: document.getElementById('count-parcial'),
+  };
+  const bars = {
+    sim:     document.getElementById('bar-sim'),
+    nao:     document.getElementById('bar-nao'),
+    parcial: document.getElementById('bar-parcial'),
+  };
+  const barWrap = document.getElementById('rq-bar-wrap');
+  const totalEl = document.getElementById('rq-total');
+  if (!btns.sim) return;
+
+  function updateUI() {
+    const total = votes.sim + votes.nao + votes.parcial;
+    Object.keys(votes).forEach(k => {
+      counts[k].textContent = votes[k];
+      const pct = total > 0 ? Math.round((votes[k] / total) * 100) : 0;
+      bars[k].style.width = pct + '%';
+    });
+    if (total > 0) {
+      barWrap.style.display = 'flex';
+      totalEl.style.display = 'block';
+      totalEl.textContent = `${total} voto${total !== 1 ? 's' : ''} registrado${total !== 1 ? 's' : ''}`;
+    }
+  }
+
+  Object.keys(btns).forEach(key => {
+    btns[key].addEventListener('click', () => {
+      if (voted) return;
+      voted = true;
+      votes[key]++;
+      updateUI();
+      // Dim other buttons
+      Object.keys(btns).forEach(k => {
+        if (k !== key) btns[k].classList.add('voted');
+      });
+      btns[key].style.opacity = '1';
+      btns[key].style.boxShadow = `0 0 20px currentColor`;
+    });
+  });
 }
 
 /* ─── FLIP CAROUSEL (SOLUTIONS) ───────────────────────── */
