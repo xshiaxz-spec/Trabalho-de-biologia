@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Efeito Estufa — Uma Jornada Pelo Planeta</title>
+<title>Aquecimento Global & Agenda 2030 — IFF Campus Quissamã</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -39,15 +39,17 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#intro" class="nav-link">Início</a></li>
-    <li><a href="#what" class="nav-link">O Fenômeno</a></li>
-    <li><a href="#human" class="nav-link">Problema</a></li>
-    <li><a href="#natural" class="nav-link">Natural</a></li>
+    <li><a href="#intro" class="nav-link">Capa</a></li>
+    <li><a href="#what" class="nav-link">Efeito Estufa</a></li>
+    <li><a href="#human" class="nav-link">Causas</a></li>
+    <li><a href="#fluxo" class="nav-link">Relação</a></li>
     <li><a href="#bio" class="nav-link">Biológico</a></li>
     <li><a href="#carousel" class="nav-link">Painel 3D</a></li>
     <li><a href="#local" class="nav-link">Quissamã</a></li>
     <li><a href="#ods" class="nav-link">ODS</a></li>
     <li><a href="#solutions" class="nav-link">Soluções</a></li>
+    <li><a href="#conclusao" class="nav-link">Conclusão</a></li>
+    <li><a href="#referencias" class="nav-link">Referências</a></li>
   </ul>
 </nav>
 
@@ -67,33 +69,88 @@
     <div class="earth-orbit-dot"></div>
   </div>
   <div class="intro-particles" id="intro-particles"></div>
-  <div class="intro-content">
-    <div class="intro-eyebrow">
-      <span class="eyebrow-line"></span>
-      <span>DOCUMENTÁRIO INTERATIVO</span>
-      <span class="eyebrow-line"></span>
+
+  <!-- CAPA INSTITUCIONAL -->
+  <div class="cover-card">
+    <!-- Nomes no canto superior esquerdo -->
+    <div class="cover-names-topleft">
+      <span class="covn-label">DISCENTES</span>
+      <span>Davi Barbosa · Henri Corleth · Maysa Camponês · Gabriel</span>
+      <span class="covn-sep">|</span>
+      <span class="covn-label">DOCENTE</span>
+      <span>Moisés Ambrósio</span>
     </div>
-    <h1 class="intro-title">
-      <span class="title-word">EFEITO</span>
-      <span class="title-word accent">ESTUFA</span>
+
+    <!-- Logo IFF -->
+    <div class="cover-logo-area">
+      <svg class="iff-logo-svg" viewBox="0 0 160 54" xmlns="http://www.w3.org/2000/svg" aria-label="Logo IFF">
+        <!-- I -->
+        <rect x="2"  y="4" width="10" height="46" rx="2" fill="#00cc66"/>
+        <!-- F (primeiro) -->
+        <rect x="22" y="4"  width="10" height="46" rx="2" fill="#00cc66"/>
+        <rect x="22" y="4"  width="32" height="10" rx="2" fill="#00cc66"/>
+        <rect x="22" y="21" width="24" height="9"  rx="2" fill="#00cc66"/>
+        <!-- F (segundo) -->
+        <rect x="66" y="4"  width="10" height="46" rx="2" fill="#00cc66"/>
+        <rect x="66" y="4"  width="32" height="10" rx="2" fill="#00cc66"/>
+        <rect x="66" y="21" width="24" height="9"  rx="2" fill="#00cc66"/>
+        <!-- Texto -->
+        <text x="108" y="22" font-family="Arial" font-weight="700" font-size="11" fill="#00cc66">INSTITUTO</text>
+        <text x="108" y="36" font-family="Arial" font-weight="700" font-size="11" fill="#00cc66">FEDERAL</text>
+        <text x="108" y="50" font-family="Arial" font-size="9"  fill="#aaaaaa">Fluminense</text>
+      </svg>
+      <div class="cover-campus-tag">Campus Quissamã</div>
+    </div>
+
+    <div class="cover-divider-h"></div>
+
+    <!-- Seminário tag -->
+    <div class="cover-seminar-label">SEMINÁRIO · BIOLOGIA</div>
+
+    <!-- Título -->
+    <h1 class="cover-title">
+      Aquecimento Global<br>
+      <em>&amp; Agenda 2030</em>
     </h1>
-    <p class="intro-subtitle">O planeta está ficando mais quente.<br>E nós estamos acelerando isso.</p>
-    <button class="explore-btn" id="explore-btn">
-      <span class="btn-text">Explorar</span>
+    <p class="cover-subtitle">Desafios, Objetivos e Ações para um Futuro Sustentável</p>
+
+    <div class="cover-divider-h"></div>
+
+    <!-- Alunos + professor -->
+    <div class="cover-people">
+      <div class="cover-people-col">
+        <span class="cover-people-label">DISCENTES</span>
+        <ul class="cover-names">
+          <li>Davi Barbosa</li>
+          <li>Henri Corleth</li>
+          <li>Maysa Camponês</li>
+          <li>Gabriel</li>
+        </ul>
+      </div>
+      <div class="cover-people-divider"></div>
+      <div class="cover-people-col">
+        <span class="cover-people-label">DOCENTE</span>
+        <ul class="cover-names">
+          <li>Moisés Ambrósio</li>
+        </ul>
+        <span class="cover-people-label" style="margin-top:1rem">LOCAL / ANO</span>
+        <ul class="cover-names">
+          <li>Quissamã — RJ</li>
+          <li>2025</li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="explore-btn cover-explore-btn" id="explore-btn">
+      <span class="btn-text">Iniciar Apresentação</span>
       <span class="btn-icon">↓</span>
       <div class="btn-pulse"></div>
     </button>
   </div>
+
   <div class="intro-scroll-hint">
     <div class="scroll-line"></div>
     <span>ROLE PARA BAIXO</span>
-  </div>
-  <div class="intro-stat-bar">
-    <div class="stat-item"><span class="stat-num">+1.2°C</span><span class="stat-lbl">Aquecimento Global</span></div>
-    <div class="stat-divider"></div>
-    <div class="stat-item"><span class="stat-num">421ppm</span><span class="stat-lbl">CO₂ na Atmosfera</span></div>
-    <div class="stat-divider"></div>
-    <div class="stat-item"><span class="stat-num">3.7mm/ano</span><span class="stat-lbl">Elevação do Mar</span></div>
   </div>
 </section>
 
@@ -187,6 +244,112 @@
         <div class="counter-label">Floresta destruída hoje</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 — FLUXOGRAMA: EE → AQUECIMENTO GLOBAL
+════════════════════════════════════════════ -->
+<section id="fluxo" class="section fluxo-section">
+  <div class="fluxo-bg"></div>
+  <div class="fluxo-content">
+    <div class="section-tag fluxo-tag">SLIDE 03</div>
+    <h2 class="section-title fluxo-title">Efeito Estufa <em>→</em> Aquecimento Global</h2>
+    <p class="section-lead">Veja como os gases lançados por ações humanas desencadeiam uma cascata de consequências planetárias. Toque em cada etapa para mais detalhes.</p>
+
+    <!-- FLUXOGRAMA INTERATIVO -->
+    <div class="fluxo-diagram" id="fluxo-diagram">
+
+      <div class="fluxo-node fluxo-source" data-tip="Queima de combustíveis fósseis, desmatamento e agropecuária são as principais fontes de gases de efeito estufa de origem humana.">
+        <div class="fn-icon">🏭</div>
+        <div class="fn-label">Ações Humanas</div>
+        <div class="fn-sub">Combustíveis, desmatamento, agro</div>
+      </div>
+      <div class="fluxo-arrow">→</div>
+
+      <div class="fluxo-node fluxo-gas" data-tip="CO₂ (421ppm), CH₄ (×25 CO₂) e N₂O (×298 CO₂) acumulam-se na atmosfera, potencializando o efeito estufa natural.">
+        <div class="fn-icon">⚗️</div>
+        <div class="fn-label">Gases Estufa</div>
+        <div class="fn-sub">CO₂ · CH₄ · N₂O · HFCs</div>
+      </div>
+      <div class="fluxo-arrow">→</div>
+
+      <div class="fluxo-node fluxo-greenhouse" data-tip="A camada de gases retém mais calor infravermelho do que o natural, impedindo sua dissipação para o espaço.">
+        <div class="fn-icon">🌡️</div>
+        <div class="fn-label">Efeito Estufa Intensificado</div>
+        <div class="fn-sub">Mais calor retido na atmosfera</div>
+      </div>
+      <div class="fluxo-arrow fluxo-arrow-down">↓</div>
+
+      <!-- Segunda linha: consequências -->
+      <div class="fluxo-consequences-row">
+
+        <div class="fluxo-node fluxo-cons" data-tip="A temperatura média global já subiu +1,2°C desde 1850. Projeções indicam +1,5°C a +4°C até 2100 dependendo das emissões.">
+          <div class="fn-icon">🔥</div>
+          <div class="fn-label">Aquecimento Global</div>
+          <div class="fn-sub">+1,2°C desde 1850</div>
+        </div>
+
+        <div class="fluxo-node fluxo-cons" data-tip="Geleiras e calotas polares perdem massa. O nível do mar sobe 3,7mm/ano, ameaçando cidades costeiras como no litoral fluminense.">
+          <div class="fn-icon">🌊</div>
+          <div class="fn-label">Degelo e Elevação do Mar</div>
+          <div class="fn-sub">+3,7mm/ano</div>
+        </div>
+
+        <div class="fluxo-node fluxo-cons" data-tip="Secas, enchentes, furacões e ondas de calor tornam-se mais frequentes e intensos, afetando agriculturas, cidades e populações.">
+          <div class="fn-icon">⛈️</div>
+          <div class="fn-label">Eventos Extremos</div>
+          <div class="fn-sub">Secas, enchentes, furacões</div>
+        </div>
+
+        <div class="fluxo-node fluxo-cons" data-tip="Mais de 1 milhão de espécies ameaçadas. Corais branqueados, migração de espécies e colapso de ecossistemas como a Amazônia.">
+          <div class="fn-icon">🦋</div>
+          <div class="fn-label">Colapso Biodiversidade</div>
+          <div class="fn-sub">1M espécies em risco</div>
+        </div>
+
+      </div>
+
+    </div><!-- /fluxo-diagram -->
+
+    <!-- TOOLTIP POPUP -->
+    <div class="fluxo-tooltip" id="fluxo-tooltip"></div>
+
+    <!-- DADOS BRASIL -->
+    <div class="brasil-dados">
+      <div class="bd-header">
+        <span class="bd-flag">🇧🇷</span>
+        <h3>Brasil em Números</h3>
+        <span class="bd-tag">DADOS NACIONAIS</span>
+      </div>
+      <div class="bd-grid">
+        <div class="bd-item">
+          <span class="bd-num">2,4 Gt</span>
+          <span class="bd-lbl">CO₂eq emitidos em 2022</span>
+        </div>
+        <div class="bd-item">
+          <span class="bd-num">3°</span>
+          <span class="bd-lbl">Maior emissor América Lat.</span>
+        </div>
+        <div class="bd-item">
+          <span class="bd-num">~50%</span>
+          <span class="bd-lbl">Das emissões: uso da terra</span>
+        </div>
+        <div class="bd-item">
+          <span class="bd-num">11.568</span>
+          <span class="bd-lbl">km² desmatados Amazônia/2022</span>
+        </div>
+        <div class="bd-item">
+          <span class="bd-num">−48%</span>
+          <span class="bd-lbl">Meta emissões até 2030 (NDC)</span>
+        </div>
+        <div class="bd-item">
+          <span class="bd-num">+2°C</span>
+          <span class="bd-lbl">Projeção RJ até 2100</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -370,13 +533,13 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 6 — CARROSSEL 3D 
+     SECTION 6 — CARROSSEL 3D FUTURISTA
 ════════════════════════════════════════════ -->
 <section id="carousel" class="section carousel-section">
   <canvas id="carousel-bg-canvas"></canvas>
   <div class="carousel-content">
     <div class="section-tag sci">PAINEL CIENTÍFICO</div>
-    <h2 class="section-title glow-title">Painel <em>3D
+    <h2 class="section-title glow-title">Painel <em>3D</em> Interativo</h2>
     <p class="section-lead">Explore os principais fatores do aquecimento global. Navegue e <strong>clique no card central</strong> para expandir.</p>
 
     <div class="carousel-3d-wrapper" id="carousel-wrapper">
@@ -728,37 +891,191 @@
 
     <div class="local-map-area">
       <div class="map-container" id="local-map">
-        <div class="map-bg">
-          <div class="map-ocean"></div>
-          <div class="map-land"></div>
-          <div class="map-waves"></div>
+
+        <!-- SVG mapa interativo da região norte-fluminense -->
+        <div class="map-svg-wrap">
+          <svg class="map-svg" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fundo oceano -->
+            <rect width="700" height="400" fill="#03101f"/>
+            <!-- Grade sutil no oceano -->
+            <g stroke="rgba(0,80,160,0.08)" stroke-width="1">
+              <line x1="0" y1="80"  x2="700" y2="80"/>
+              <line x1="0" y1="160" x2="700" y2="160"/>
+              <line x1="0" y1="240" x2="700" y2="240"/>
+              <line x1="0" y1="320" x2="700" y2="320"/>
+              <line x1="100" y1="0" x2="100" y2="400"/>
+              <line x1="200" y1="0" x2="200" y2="400"/>
+              <line x1="300" y1="0" x2="300" y2="400"/>
+              <line x1="400" y1="0" x2="400" y2="400"/>
+              <line x1="500" y1="0" x2="500" y2="400"/>
+              <line x1="600" y1="0" x2="600" y2="400"/>
+            </g>
+            <!-- Ondas costeiras animadas -->
+            <g class="wave-group" opacity="0.18">
+              <path d="M0,350 Q175,338 350,350 Q525,362 700,350" fill="none" stroke="#1a6bb5" stroke-width="1.5"/>
+              <path d="M0,362 Q175,350 350,362 Q525,374 700,362" fill="none" stroke="#1a6bb5" stroke-width="1.2"/>
+              <path d="M0,375 Q175,363 350,375 Q525,387 700,375" fill="none" stroke="#1a6bb5" stroke-width="1"/>
+            </g>
+
+            <!-- Terra — norte fluminense -->
+            <path class="map-land-svg" d="
+              M 20,290 L 45,210 L 80,165 L 125,130 L 175,112
+              L 235,95  L 305,88  L 370,91  L 420,103 L 465,118
+              L 505,133 L 548,150 L 590,167 L 630,183 L 670,200
+              L 685,255 L 675,298 L 635,318 L 580,328 L 520,332
+              L 455,328 L 390,324 L 330,327 L 270,328 L 215,326
+              L 160,320 L 100,308 L 55,298 Z
+            "/>
+
+            <!-- Faixa costeira highlight -->
+            <path class="map-coast" d="M 20,290 L 45,210 L 80,165 L 125,130 L 175,112 L 235,95 L 305,88 L 370,91 L 420,103 L 465,118 L 505,133 L 548,150 L 590,167 L 630,183 L 670,200"/>
+
+            <!-- Sombra interna terra -->
+            <path d="M 20,290 L 45,210 L 80,165 L 125,130 L 175,112 L 235,95 L 305,88 L 370,91 L 420,103 L 465,118 L 505,133 L 548,150 L 590,167 L 630,183 L 670,200 L 685,255 L 675,298 L 635,318 L 580,328 L 520,332 L 455,328 L 390,324 L 330,327 L 270,328 L 215,326 L 160,320 L 100,308 L 55,298 Z" fill="none" stroke="rgba(0,200,80,0.06)" stroke-width="12"/>
+
+            <!-- P.N. Restinga de Jurubatiba -->
+            <ellipse cx="318" cy="208" rx="72" ry="34" class="jurubatiba-svg"/>
+            <text x="318" y="203" class="map-area-label" text-anchor="middle">P.N. Restinga de</text>
+            <text x="318" y="217" class="map-area-label" text-anchor="middle">Jurubatiba 🏝️</text>
+
+            <!-- Rio Paraíba do Sul -->
+            <path class="map-river" d="M 70,225 Q 115,208 165,215 Q 205,220 235,208 Q 255,202 270,207"/>
+            <text x="150" y="200" font-family="Space Mono,monospace" font-size="6.5" fill="rgba(80,160,255,0.45)" text-anchor="middle">Rio Paraíba do Sul</text>
+
+            <!-- Lagoa Feia -->
+            <ellipse cx="168" cy="252" rx="32" ry="15" class="map-lagoa"/>
+            <text x="168" y="256" class="map-small-label" text-anchor="middle">Lagoa Feia</text>
+
+            <!-- Lagoa de Carapebus -->
+            <ellipse cx="290" cy="240" rx="16" ry="9" class="map-lagoa"/>
+            <text x="290" y="262" class="map-small-label" text-anchor="middle" font-size="6">Lag. Carapebus</text>
+
+            <!-- ===== CIDADES — PINS CLICÁVEIS ===== -->
+
+            <!-- Campos dos Goytacazes -->
+            <g class="map-city" data-city="campos" transform="translate(125,200)" tabindex="0" role="button" aria-label="Campos dos Goytacazes">
+              <circle r="26" fill="transparent" class="city-hit"/>
+              <circle class="city-dot large-dot" r="9"/>
+              <circle class="city-pulse" r="9"/>
+              <circle class="city-pulse city-pulse-2" r="9"/>
+              <polygon points="0,-18 5,-9 -5,-9" class="city-pin" fill="#ff6b6b" opacity="0.9"/>
+              <text y="-23" class="city-label" text-anchor="middle">Campos dos Goytacazes</text>
+            </g>
+
+            <!-- Carapebus -->
+            <g class="map-city" data-city="carapebus" transform="translate(285,182)" tabindex="0" role="button" aria-label="Carapebus">
+              <circle r="22" fill="transparent" class="city-hit"/>
+              <circle class="city-dot" r="7" fill="#00ff88"/>
+              <circle class="city-pulse" r="7" style="stroke:#00ff88"/>
+              <polygon points="0,-14 4,-7 -4,-7" class="city-pin" fill="#00ff88" opacity="0.9"/>
+              <text y="-19" class="city-label" text-anchor="middle" style="fill:rgba(0,255,136,0.9)">Carapebus</text>
+            </g>
+
+            <!-- Quissamã — DESTAQUE -->
+            <g class="map-city active-city" data-city="quissama" transform="translate(360,228)" tabindex="0" role="button" aria-label="Quissamã">
+              <circle r="28" fill="transparent" class="city-hit"/>
+              <!-- Anel externo destacado -->
+              <circle class="highlight-ring-static" r="16" fill="none" stroke="rgba(0,212,255,0.25)" stroke-width="1"/>
+              <circle class="city-dot highlight-dot" r="10"/>
+              <circle class="city-pulse highlight-pulse" r="10"/>
+              <circle class="city-pulse city-pulse-2 highlight-pulse" r="10"/>
+              <polygon points="0,-20 6,-10 -6,-10" class="city-pin" fill="#00d4ff" opacity="0.95"/>
+              <text y="-26" class="city-label highlight-label" text-anchor="middle">★ Quissamã</text>
+            </g>
+
+            <!-- Macaé -->
+            <g class="map-city" data-city="macae" transform="translate(470,218)" tabindex="0" role="button" aria-label="Macaé">
+              <circle r="24" fill="transparent" class="city-hit"/>
+              <circle class="city-dot medium-dot" r="8" fill="#ffd700"/>
+              <circle class="city-pulse" r="8" style="stroke:#ffd700"/>
+              <polygon points="0,-16 5,-8 -5,-8" class="city-pin" fill="#ffd700" opacity="0.9"/>
+              <text y="-21" class="city-label" text-anchor="middle" style="fill:rgba(255,215,0,0.9)">Macaé</text>
+            </g>
+
+            <!-- Rio das Ostras -->
+            <g class="map-city" data-city="rioostras" transform="translate(555,222)" tabindex="0" role="button" aria-label="Rio das Ostras">
+              <circle r="20" fill="transparent" class="city-hit"/>
+              <circle class="city-dot" r="6" fill="#ff9f43"/>
+              <circle class="city-pulse" r="6" style="stroke:#ff9f43"/>
+              <polygon points="0,-13 4,-6 -4,-6" class="city-pin" fill="#ff9f43" opacity="0.9"/>
+              <text y="-18" class="city-label" text-anchor="middle" style="fill:rgba(255,159,67,0.9)">Rio das Ostras</text>
+            </g>
+
+            <!-- Bússola -->
+            <g transform="translate(648,52)">
+              <circle r="24" fill="rgba(0,0,0,0.5)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+              <text y="-11" text-anchor="middle" font-size="9" fill="rgba(0,212,255,0.7)" font-family="Arial" font-weight="bold">N</text>
+              <line x1="0" y1="-8" x2="0" y2="8" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+              <polygon points="0,-8 -3,0 0,2 3,0" fill="var(--c-cyan)" opacity="0.8"/>
+              <text y="19" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.3)" font-family="Arial">RJ · BR</text>
+            </g>
+
+            <!-- Escala -->
+            <g transform="translate(28,358)">
+              <rect x="-4" y="-12" width="80" height="18" rx="3" fill="rgba(0,0,0,0.4)"/>
+              <line x1="0" y1="0" x2="64" y2="0" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <line x1="64" y1="-4" x2="64" y2="4" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <text x="32" y="-5" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.45)" font-family="Arial">~50 km</text>
+            </g>
+
+            <!-- Label oceano -->
+            <text x="90" y="370" font-family="Space Mono,monospace" font-size="9" fill="rgba(30,100,180,0.4)" font-style="italic">Oceano Atlântico</text>
+          </svg>
+
+          <!-- Instrução flutuante -->
+          <div class="map-hint" id="map-hint">
+            <span>🖱️</span> Clique em uma cidade
+          </div>
         </div>
-        <div class="map-pin" style="left:42%;top:38%" data-city="Quissamã">
-          <div class="pin-dot"></div>
-          <div class="pin-ring"></div>
-          <div class="pin-label">Quissamã</div>
+
+        <!-- Painel de informações das cidades -->
+        <div class="city-info-panel" id="city-info-panel">
+          <div class="cip-idle" id="cip-idle">
+            <div class="cip-idle-icon">🗺️</div>
+            <p>Clique em uma cidade para ver impactos climáticos</p>
+            <div class="cip-idle-cities">
+              <span class="cip-idle-chip" data-target="campos">Campos</span>
+              <span class="cip-idle-chip" data-target="carapebus">Carapebus</span>
+              <span class="cip-idle-chip cip-idle-qs" data-target="quissama">★ Quissamã</span>
+              <span class="cip-idle-chip" data-target="macae">Macaé</span>
+              <span class="cip-idle-chip" data-target="rioostras">Rio das Ostras</span>
+            </div>
+          </div>
+          <div class="cip-content" id="cip-content">
+            <button class="cip-close" id="cip-close" aria-label="Fechar">✕</button>
+            <div class="cip-header">
+              <span class="cip-icon" id="cip-icon"></span>
+              <div>
+                <h3 class="cip-name" id="cip-name"></h3>
+                <span class="cip-region" id="cip-region"></span>
+              </div>
+            </div>
+            <!-- TABS -->
+            <div class="cip-tabs">
+              <button class="cip-tab active" data-tab="dados">📊 Dados</button>
+              <button class="cip-tab" data-tab="riscos">⚠️ Riscos</button>
+              <button class="cip-tab" data-tab="ecosistema">🌿 Ecossist.</button>
+              <button class="cip-tab" data-tab="acoes">✅ Ações</button>
+            </div>
+            <div class="cip-tab-panels">
+              <div class="cip-panel active" id="cip-panel-dados">
+                <div class="cip-stats" id="cip-stats"></div>
+                <div class="cip-ods-row" id="cip-ods-row"></div>
+              </div>
+              <div class="cip-panel" id="cip-panel-riscos">
+                <div class="cip-impacts" id="cip-impacts"></div>
+              </div>
+              <div class="cip-panel" id="cip-panel-ecosistema">
+                <div class="cip-eco-list" id="cip-eco"></div>
+              </div>
+              <div class="cip-panel" id="cip-panel-acoes">
+                <div class="cip-actions-list" id="cip-actions"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="map-pin" style="left:55%;top:42%" data-city="Macaé">
-          <div class="pin-dot"></div>
-          <div class="pin-ring"></div>
-          <div class="pin-label">Macaé</div>
-        </div>
-        <div class="map-pin" style="left:35%;top:30%" data-city="Carapebus">
-          <div class="pin-dot"></div>
-          <div class="pin-ring"></div>
-          <div class="pin-label">Carapebus</div>
-        </div>
-        <div class="map-pin" style="left:20%;top:25%" data-city="Campos dos Goytacazes">
-          <div class="pin-dot large"></div>
-          <div class="pin-ring"></div>
-          <div class="pin-label">Campos dos Goytacazes</div>
-        </div>
-        <div class="jurubatiba-area">
-          <div class="jurubatiba-glow"></div>
-          <span>🏝️ P.N. Restinga de Jurubatiba</span>
-        </div>
-        <div class="map-heat-wave"></div>
-        <div class="map-heat-wave w2"></div>
+
       </div>
     </div>
 
@@ -1289,6 +1606,181 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO — CONCLUSÃO / REFLEXÃO
+════════════════════════════════════════════════════════ -->
+<section id="conclusao" class="section conclusao-section">
+  <div class="conclusao-bg"></div>
+  <div class="conclusao-content">
+    <div class="section-tag conclusao-tag">SLIDE 08</div>
+    <h2 class="section-title conclusao-title">Conclusão <em>&amp; Reflexão</em></h2>
+    <p class="section-lead" style="max-width:700px">A grande questão que ficou: ainda dá tempo de contemplar as ODS até 2030? Explore cada perspectiva e forme sua opinião.</p>
+
+    <!-- QUESTÃO CENTRAL INTERATIVA -->
+    <div class="reflexao-question-box">
+      <div class="rq-icon">🌍</div>
+      <h3 class="rq-title">É possível contemplar as ODS até 2030?</h3>
+      <div class="rq-vote-row">
+        <button class="rq-vote-btn sim" id="vote-sim">
+          <span class="rqv-icon">✅</span>
+          <span class="rqv-label">Sim, é possível</span>
+          <span class="rqv-count" id="count-sim">0</span>
+        </button>
+        <button class="rq-vote-btn nao" id="vote-nao">
+          <span class="rqv-icon">❌</span>
+          <span class="rqv-label">Não, é tarde demais</span>
+          <span class="rqv-count" id="count-nao">0</span>
+        </button>
+        <button class="rq-vote-btn parcial" id="vote-parcial">
+          <span class="rqv-icon">⚠️</span>
+          <span class="rqv-label">Parcialmente</span>
+          <span class="rqv-count" id="count-parcial">0</span>
+        </button>
+      </div>
+      <div class="rq-bar-wrap" id="rq-bar-wrap" style="display:none">
+        <div class="rq-bar"><div class="rq-fill sim-fill" id="bar-sim"></div></div>
+        <div class="rq-bar"><div class="rq-fill nao-fill" id="bar-nao"></div></div>
+        <div class="rq-bar"><div class="rq-fill parcial-fill" id="bar-parcial"></div></div>
+      </div>
+      <p class="rq-total" id="rq-total" style="display:none"></p>
+    </div>
+
+    <!-- ARGUMENTOS INTERATIVOS -->
+    <div class="reflexao-args-grid">
+
+      <div class="rarg-card rarg-sim">
+        <div class="rarg-header">
+          <span class="rarg-icon">✅</span>
+          <h4>Argumentos a Favor</h4>
+        </div>
+        <ul class="rarg-list">
+          <li>Energia renovável cresceu 73% da nova capacidade global em 2023 — tendência acelerada</li>
+          <li>Veículos elétricos: crescimento de 18× em uma década; custo das baterias caindo 90%</li>
+          <li>A ODS 13 (Ação Climática) mobilizou mais de US$ 100 bi/ano em financiamento verde</li>
+          <li>Reflorestamento em escala global: meta de 1 trilhão de árvores com adesão de 193 países</li>
+          <li>Jovens e educação ambiental — seminários como este mudam a consciência coletiva</li>
+        </ul>
+      </div>
+
+      <div class="rarg-card rarg-nao">
+        <div class="rarg-header">
+          <span class="rarg-icon">⚠️</span>
+          <h4>Desafios &amp; Obstáculos</h4>
+        </div>
+        <ul class="rarg-list">
+          <li>CO₂ atmosférico em 421ppm — nível mais alto em 800.000 anos, ainda subindo</li>
+          <li>Apenas 8% dos resíduos são reciclados no Brasil; desigualdades limitam ações locais</li>
+          <li>A maioria dos países ainda não atingiu metas do Acordo de Paris</li>
+          <li>Interesses econômicos de combustíveis fósseis travam legislação climática</li>
+          <li>2030 é em apenas 4 anos — muitas metas exigem décadas de mudança estrutural</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- REFLEXÃO FINAL -->
+    <div class="reflexao-final-box">
+      <div class="rfb-line"></div>
+      <blockquote class="rfb-quote">
+        "Não precisamos ser perfeitos para começar. <strong>Precisamos começar para poder ser melhores.</strong> Cada ação conta — e a soma de cada ação individual cria as transformações coletivas que as ODS exigem."
+      </blockquote>
+      <p class="rfb-attr">— Reflexão dos autores · IFF Campus Quissamã, 2025</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SEÇÃO — REFERÊNCIAS BIBLIOGRÁFICAS
+════════════════════════════════════════════════════════ -->
+<section id="referencias" class="section referencias-section">
+  <div class="referencias-content">
+    <div class="section-tag ref-tag">SLIDE 09</div>
+    <h2 class="section-title ref-title">Referências <em>Bibliográficas</em></h2>
+
+    <div class="ref-list">
+
+      <div class="ref-item">
+        <span class="ref-num">01</span>
+        <div class="ref-body">
+          <p>IPCC. <em>Sixth Assessment Report (AR6) — Climate Change 2021: The Physical Science Basis.</em> Intergovernmental Panel on Climate Change, 2021. Disponível em: <span class="ref-url">https://www.ipcc.ch/report/ar6/wg1/</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">02</span>
+        <div class="ref-body">
+          <p>ORGANIZAÇÃO DAS NAÇÕES UNIDAS. <em>Sobre o nosso trabalho para alcançar os Objetivos de Desenvolvimento Sustentável no Brasil.</em> ONU Brasil, 2024. Disponível em: <span class="ref-url">https://brasil.un.org/pt-br/sdgs</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">03</span>
+        <div class="ref-body">
+          <p>NASA. <em>Global Climate Change: Vital Signs of the Planet.</em> Jet Propulsion Laboratory, 2024. Disponível em: <span class="ref-url">https://climate.nasa.gov</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">04</span>
+        <div class="ref-body">
+          <p>INPE — Instituto Nacional de Pesquisas Espaciais. <em>Monitoramento do Desmatamento da Floresta Amazônica Brasileira por Satélite (PRODES).</em> INPE, 2023. Disponível em: <span class="ref-url">http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/prodes</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">05</span>
+        <div class="ref-body">
+          <p>NOAA — National Oceanic and Atmospheric Administration. <em>Global Monitoring Laboratory: Trends in Atmospheric Carbon Dioxide.</em> NOAA, 2024. Disponível em: <span class="ref-url">https://gml.noaa.gov/ccgg/trends/</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">06</span>
+        <div class="ref-body">
+          <p>IBAMA. <em>Parque Nacional da Restinga de Jurubatiba.</em> Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis. Disponível em: <span class="ref-url">https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/mata-atlantica/lista-de-ucs/rebio-pocos-das-antas/copy_of_parna-restinga-de-jurubatiba</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">07</span>
+        <div class="ref-body">
+          <p>OIT — Organização Internacional do Trabalho. <em>World Employment and Social Outlook 2018: Greening with Jobs.</em> International Labour Organization, 2018. Disponível em: <span class="ref-url">https://www.ilo.org/global/publications/books/WCMS_628654/lang--en/index.htm</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">08</span>
+        <div class="ref-body">
+          <p>WWF BRASIL. <em>Relatório Planeta Vivo 2022.</em> World Wildlife Fund, 2022. Disponível em: <span class="ref-url">https://www.wwf.org.br/natureza_brasileira/especiais/relatorio_planeta_vivo/</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">09</span>
+        <div class="ref-body">
+          <p>UNFCCC. <em>The Paris Agreement.</em> United Nations Framework Convention on Climate Change, 2015. Disponível em: <span class="ref-url">https://unfccc.int/process-and-meetings/the-paris-agreement</span></p>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <span class="ref-num">10</span>
+        <div class="ref-body">
+          <p>BRASIL. Ministério do Meio Ambiente. <em>Política Nacional sobre Mudança do Clima — Lei nº 12.187/2009.</em> Disponível em: <span class="ref-url">https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12187.htm</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ref-nota">
+      <span class="ref-nota-icon">📌</span>
+      <p>Referências organizadas conforme normas <strong>ABNT NBR 6023:2018</strong>. Acessos realizados entre agosto e outubro de 2024.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TELA FINAL -->
 <section id="final" class="section final-section">
   <canvas id="final-canvas"></canvas>
   <div class="final-content">
@@ -1302,8 +1794,8 @@
         <span>↑ Recomeçar</span>
       </button>
       <div class="final-credits">
-        <p>Trabalho sobre Efeito Estufa e Impactos Biológicos</p>
-        <p class="credits-sub">Conexão com Quissamã/RJ e ecossistemas locais</p>
+        <p>Davi Barbosa · Henri Corleth · Maysa Camponês · Gabriel</p>
+        <p class="credits-sub">IFF Campus Quissamã · Prof. Moisés Ambrósio · 2025</p>
       </div>
     </div>
   </div>
