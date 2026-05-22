@@ -1146,234 +1146,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     SECTION 9 — SOLUÇÕES (FLIP CAROUSEL)
-════════════════════════════════════════════ -->
-<section id="solutions" class="section solutions-section">
-  <canvas id="leaves-canvas"></canvas>
-  <div class="solutions-content">
-    <div class="section-tag green">SEÇÃO 07</div>
-    <h2 class="section-title green-title">O Caminho de <em>Volta</em></h2>
-    <p class="section-lead">Ainda há tempo. Mas precisamos agir agora. Clique em um item para ver como você pode ajudar no dia a dia.</p>
-    <div class="inline-ods-badges">
-      <span class="iob" style="--c:#FCC30B">ODS 7</span>
-      <span class="iob" style="--c:#3F7E44">ODS 13</span>
-      <span class="iob" style="--c:#56C02B">ODS 15</span>
-      <span class="iob" style="--c:#BF8B2E">ODS 12</span>
-      <span class="iob" style="--c:#4C9F38">ODS 2</span>
-      <span class="iob" style="--c:#FD9D24">ODS 11</span>
-    </div>
-
-    <!-- FLIP CAROUSEL WRAPPER -->
-    <div class="flip-carousel-outer">
-      <!-- LEFT: card items list -->
-      <div class="flip-carousel-list" id="flip-carousel-list">
-
-        <div class="flip-item" data-idx="0">
-          <div class="flip-item-icon">☀️</div>
-          <div class="flip-item-info">
-            <span class="flip-item-title">Energia Renovável</span>
-            <span class="flip-item-sub">73% da nova capacidade elétrica em 2023</span>
-          </div>
-          <div class="flip-item-arrow">›</div>
-        </div>
-
-        <div class="flip-item" data-idx="1">
-          <div class="flip-item-icon">🌱</div>
-          <div class="flip-item-info">
-            <span class="flip-item-title">Reflorestamento</span>
-            <span class="flip-item-sub">Meta global: +1 trilhão de árvores</span>
-          </div>
-          <div class="flip-item-arrow">›</div>
-        </div>
-
-        <div class="flip-item" data-idx="2">
-          <div class="flip-item-icon">🚲</div>
-          <div class="flip-item-info">
-            <span class="flip-item-title">Mobilidade Limpa</span>
-            <span class="flip-item-sub">18% de crescimento em EVs em 2023</span>
-          </div>
-          <div class="flip-item-arrow">›</div>
-        </div>
-
-        <div class="flip-item" data-idx="3">
-          <div class="flip-item-icon">♻️</div>
-          <div class="flip-item-info">
-            <span class="flip-item-title">Economia Circular</span>
-            <span class="flip-item-sub">Potencial: −39% das emissões globais</span>
-          </div>
-          <div class="flip-item-arrow">›</div>
-        </div>
-
-        <div class="flip-item" data-idx="4">
-          <div class="flip-item-icon">🌾</div>
-          <div class="flip-item-info">
-            <span class="flip-item-title">Agricultura Sustentável</span>
-            <span class="flip-item-sub">10% das emissões podem ser evitadas</span>
-          </div>
-          <div class="flip-item-arrow">›</div>
-        </div>
-
-        <div class="flip-item" data-idx="5">
-          <div class="flip-item-icon">🏙️</div>
-          <div class="flip-item-info">
-            <span class="flip-item-title">Cidades Inteligentes</span>
-            <span class="flip-item-sub">40% das emissões vêm de edifícios</span>
-          </div>
-          <div class="flip-item-arrow">›</div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT: detail panel (Xbox-style unlock reveal) -->
-      <div class="flip-detail-panel" id="flip-detail-panel">
-        <div class="flip-detail-idle">
-          <div class="flip-idle-icon">🌍</div>
-          <p>Selecione um item<br>para ver detalhes</p>
-        </div>
-
-        <!-- Each detail card (hidden by default) -->
-        <div class="flip-detail-card" data-detail="0">
-          <div class="flip-detail-badge">☀️</div>
-          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
-          <h3 class="flip-detail-title">Energia Renovável</h3>
-          <div class="flip-detail-stat-row">
-            <div class="flip-detail-stat"><span>73%</span><small>Nova capacidade</small></div>
-            <div class="flip-detail-stat"><span>−76%</span><small>Custo solar 10 anos</small></div>
-          </div>
-          <div class="flip-detail-divider"></div>
-          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
-          <ul class="flip-detail-tips">
-            <li>Instale painéis solares ou entre em cooperativa de energia solar</li>
-            <li>Troque lâmpadas por LED — usa 75% menos energia</li>
-            <li>Desconecte aparelhos da tomada quando não estiver usando</li>
-            <li>Escolha fornecedoras de energia renovável ao contratar serviço</li>
-          </ul>
-          <div class="flip-detail-bar-wrap">
-            <span>Impacto individual</span>
-            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:70%"></div></div>
-          </div>
-        </div>
-
-        <div class="flip-detail-card" data-detail="1">
-          <div class="flip-detail-badge">🌱</div>
-          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
-          <h3 class="flip-detail-title">Reflorestamento</h3>
-          <div class="flip-detail-stat-row">
-            <div class="flip-detail-stat"><span>205Gt</span><small>CO₂ capturado</small></div>
-            <div class="flip-detail-stat"><span>1 tri</span><small>Árvores necessárias</small></div>
-          </div>
-          <div class="flip-detail-divider"></div>
-          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
-          <ul class="flip-detail-tips">
-            <li>Plante uma árvore nativa no seu bairro ou condomínio</li>
-            <li>Apoie ONGs de reflorestamento como SOS Mata Atlântica</li>
-            <li>Reduza o consumo de papel — cada folha = uma fração de árvore</li>
-            <li>Cuide de plantas em casa — até vasos ajudam o microclima urbano</li>
-          </ul>
-          <div class="flip-detail-bar-wrap">
-            <span>Impacto individual</span>
-            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:55%"></div></div>
-          </div>
-        </div>
-
-        <div class="flip-detail-card" data-detail="2">
-          <div class="flip-detail-badge">🚲</div>
-          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
-          <h3 class="flip-detail-title">Mobilidade Limpa</h3>
-          <div class="flip-detail-stat-row">
-            <div class="flip-detail-stat"><span>16%</span><small>Emissões transporte</small></div>
-            <div class="flip-detail-stat"><span>×18</span><small>Crescimento EVs</small></div>
-          </div>
-          <div class="flip-detail-divider"></div>
-          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
-          <ul class="flip-detail-tips">
-            <li>Use bicicleta ou caminhe em trajetos curtos (até 5km)</li>
-            <li>Prefira transporte público ao carro individual</li>
-            <li>Carona solidária com colegas de trabalho ou escola</li>
-            <li>Ao trocar de veículo, considere elétrico ou híbrido</li>
-          </ul>
-          <div class="flip-detail-bar-wrap">
-            <span>Impacto individual</span>
-            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:80%"></div></div>
-          </div>
-        </div>
-
-        <div class="flip-detail-card" data-detail="3">
-          <div class="flip-detail-badge">♻️</div>
-          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
-          <h3 class="flip-detail-title">Economia Circular</h3>
-          <div class="flip-detail-stat-row">
-            <div class="flip-detail-stat"><span>−39%</span><small>Emissões possíveis</small></div>
-            <div class="flip-detail-stat"><span>8%</span><small>Reciclado no Brasil</small></div>
-          </div>
-          <div class="flip-detail-divider"></div>
-          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
-          <ul class="flip-detail-tips">
-            <li>Separe o lixo reciclável — papel, plástico, vidro e metal</li>
-            <li>Compre produtos de segunda mão ou repare em vez de jogar fora</li>
-            <li>Evite descartáveis: use garrafinha, sacola reutilizável e canudo de bambu</li>
-            <li>Faça compostagem com restos orgânicos para reduzir metano em aterros</li>
-          </ul>
-          <div class="flip-detail-bar-wrap">
-            <span>Impacto individual</span>
-            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:60%"></div></div>
-          </div>
-        </div>
-
-        <div class="flip-detail-card" data-detail="4">
-          <div class="flip-detail-badge">🌾</div>
-          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
-          <h3 class="flip-detail-title">Agricultura Sustentável</h3>
-          <div class="flip-detail-stat-row">
-            <div class="flip-detail-stat"><span>10%</span><small>Emissões evitáveis</small></div>
-            <div class="flip-detail-stat"><span>−3kg</span><small>CO₂/kg carne bovina</small></div>
-          </div>
-          <div class="flip-detail-divider"></div>
-          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
-          <ul class="flip-detail-tips">
-            <li>Reduza o consumo de carne vermelha — é a maior fonte individual de emissões</li>
-            <li>Compre alimentos locais e da estação — menos transporte e armazenamento</li>
-            <li>Plante uma hortinha em casa ou varandinha com temperos</li>
-            <li>Evite desperdício de comida — 1/3 dos alimentos produzidos são descartados</li>
-          </ul>
-          <div class="flip-detail-bar-wrap">
-            <span>Impacto individual</span>
-            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:85%"></div></div>
-          </div>
-        </div>
-
-        <div class="flip-detail-card" data-detail="5">
-          <div class="flip-detail-badge">🏙️</div>
-          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
-          <h3 class="flip-detail-title">Cidades Inteligentes</h3>
-          <div class="flip-detail-stat-row">
-            <div class="flip-detail-stat"><span>40%</span><small>Emissões edifícios</small></div>
-            <div class="flip-detail-stat"><span>−30%</span><small>Com eficiência</small></div>
-          </div>
-          <div class="flip-detail-divider"></div>
-          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
-          <ul class="flip-detail-tips">
-            <li>Use ar-condicionado com moderação — cada grau a mais usa 8% mais energia</li>
-            <li>Prefira produtos com menor consumo energético (selos A e A+)</li>
-            <li>Apoie projetos de mobilidade urbana e ciclofaixas no seu município</li>
-            <li>Participe de conselhos locais e vote em candidatos comprometidos com o clima</li>
-          </ul>
-          <div class="flip-detail-bar-wrap">
-            <span>Impacto individual</span>
-            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:50%"></div></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-     
-<!-- ═══════════════════════════════════════════
-     FINAL
-════════════════════════════════════════════ -->
 
 <!-- ═══════════════════════════════════════════════════
      SECTION ODS — OBJETIVOS DE DESENVOLVIMENTO SUSTENTÁVEL
@@ -1607,6 +1379,237 @@
 
   </div>
 </section>
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 9 — SOLUÇÕES (FLIP CAROUSEL)
+════════════════════════════════════════════ -->
+<section id="solutions" class="section solutions-section">
+  <canvas id="leaves-canvas"></canvas>
+  <div class="solutions-content">
+    <div class="section-tag green">SEÇÃO 07</div>
+    <h2 class="section-title green-title">O Caminho de <em>Volta</em></h2>
+    <p class="section-lead">Ainda há tempo. Mas precisamos agir agora. Clique em um item para ver como você pode ajudar no dia a dia.</p>
+    <div class="inline-ods-badges">
+      <span class="iob" style="--c:#FCC30B">ODS 7</span>
+      <span class="iob" style="--c:#3F7E44">ODS 13</span>
+      <span class="iob" style="--c:#56C02B">ODS 15</span>
+      <span class="iob" style="--c:#BF8B2E">ODS 12</span>
+      <span class="iob" style="--c:#4C9F38">ODS 2</span>
+      <span class="iob" style="--c:#FD9D24">ODS 11</span>
+    </div>
+
+    <!-- FLIP CAROUSEL WRAPPER -->
+    <div class="flip-carousel-outer">
+      <!-- LEFT: card items list -->
+      <div class="flip-carousel-list" id="flip-carousel-list">
+
+        <div class="flip-item" data-idx="0">
+          <div class="flip-item-icon">☀️</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Energia Renovável</span>
+            <span class="flip-item-sub">73% da nova capacidade elétrica em 2023</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="1">
+          <div class="flip-item-icon">🌱</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Reflorestamento</span>
+            <span class="flip-item-sub">Meta global: +1 trilhão de árvores</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="2">
+          <div class="flip-item-icon">🚲</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Mobilidade Limpa</span>
+            <span class="flip-item-sub">18% de crescimento em EVs em 2023</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="3">
+          <div class="flip-item-icon">♻️</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Economia Circular</span>
+            <span class="flip-item-sub">Potencial: −39% das emissões globais</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="4">
+          <div class="flip-item-icon">🌾</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Agricultura Sustentável</span>
+            <span class="flip-item-sub">10% das emissões podem ser evitadas</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+        <div class="flip-item" data-idx="5">
+          <div class="flip-item-icon">🏙️</div>
+          <div class="flip-item-info">
+            <span class="flip-item-title">Cidades Inteligentes</span>
+            <span class="flip-item-sub">40% das emissões vêm de edifícios</span>
+          </div>
+          <div class="flip-item-arrow">›</div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: detail panel (Xbox-style unlock reveal) -->
+      <div class="flip-detail-panel" id="flip-detail-panel">
+        <div class="flip-detail-idle">
+          <div class="flip-idle-icon">🌍</div>
+          <p>Selecione um item<br>para ver detalhes</p>
+        </div>
+
+        <!-- Each detail card (hidden by default) -->
+        <div class="flip-detail-card" data-detail="0">
+          <div class="flip-detail-badge">☀️</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Energia Renovável</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>73%</span><small>Nova capacidade</small></div>
+            <div class="flip-detail-stat"><span>−76%</span><small>Custo solar 10 anos</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Instale painéis solares ou entre em cooperativa de energia solar</li>
+            <li>Troque lâmpadas por LED — usa 75% menos energia</li>
+            <li>Desconecte aparelhos da tomada quando não estiver usando</li>
+            <li>Escolha fornecedoras de energia renovável ao contratar serviço</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:70%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="1">
+          <div class="flip-detail-badge">🌱</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Reflorestamento</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>205Gt</span><small>CO₂ capturado</small></div>
+            <div class="flip-detail-stat"><span>1 tri</span><small>Árvores necessárias</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Plante uma árvore nativa no seu bairro ou condomínio</li>
+            <li>Apoie ONGs de reflorestamento como SOS Mata Atlântica</li>
+            <li>Reduza o consumo de papel — cada folha = uma fração de árvore</li>
+            <li>Cuide de plantas em casa — até vasos ajudam o microclima urbano</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:55%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="2">
+          <div class="flip-detail-badge">🚲</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Mobilidade Limpa</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>16%</span><small>Emissões transporte</small></div>
+            <div class="flip-detail-stat"><span>×18</span><small>Crescimento EVs</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Use bicicleta ou caminhe em trajetos curtos (até 5km)</li>
+            <li>Prefira transporte público ao carro individual</li>
+            <li>Carona solidária com colegas de trabalho ou escola</li>
+            <li>Ao trocar de veículo, considere elétrico ou híbrido</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:80%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="3">
+          <div class="flip-detail-badge">♻️</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Economia Circular</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>−39%</span><small>Emissões possíveis</small></div>
+            <div class="flip-detail-stat"><span>8%</span><small>Reciclado no Brasil</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Separe o lixo reciclável — papel, plástico, vidro e metal</li>
+            <li>Compre produtos de segunda mão ou repare em vez de jogar fora</li>
+            <li>Evite descartáveis: use garrafinha, sacola reutilizável e canudo de bambu</li>
+            <li>Faça compostagem com restos orgânicos para reduzir metano em aterros</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:60%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="4">
+          <div class="flip-detail-badge">🌾</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Agricultura Sustentável</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>10%</span><small>Emissões evitáveis</small></div>
+            <div class="flip-detail-stat"><span>−3kg</span><small>CO₂/kg carne bovina</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Reduza o consumo de carne vermelha — é a maior fonte individual de emissões</li>
+            <li>Compre alimentos locais e da estação — menos transporte e armazenamento</li>
+            <li>Plante uma hortinha em casa ou varandinha com temperos</li>
+            <li>Evite desperdício de comida — 1/3 dos alimentos produzidos são descartados</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:85%"></div></div>
+          </div>
+        </div>
+
+        <div class="flip-detail-card" data-detail="5">
+          <div class="flip-detail-badge">🏙️</div>
+          <div class="flip-detail-unlock-bar"><div class="flip-detail-unlock-fill"></div></div>
+          <h3 class="flip-detail-title">Cidades Inteligentes</h3>
+          <div class="flip-detail-stat-row">
+            <div class="flip-detail-stat"><span>40%</span><small>Emissões edifícios</small></div>
+            <div class="flip-detail-stat"><span>−30%</span><small>Com eficiência</small></div>
+          </div>
+          <div class="flip-detail-divider"></div>
+          <h4 class="flip-detail-subtitle">🏠 No seu dia a dia</h4>
+          <ul class="flip-detail-tips">
+            <li>Use ar-condicionado com moderação — cada grau a mais usa 8% mais energia</li>
+            <li>Prefira produtos com menor consumo energético (selos A e A+)</li>
+            <li>Apoie projetos de mobilidade urbana e ciclofaixas no seu município</li>
+            <li>Participe de conselhos locais e vote em candidatos comprometidos com o clima</li>
+          </ul>
+          <div class="flip-detail-bar-wrap">
+            <span>Impacto individual</span>
+            <div class="flip-detail-bar"><div class="flip-detail-bar-fill" style="--w:50%"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+     
+<!-- ═══════════════════════════════════════════
+     FINAL
+════════════════════════════════════════════ -->
+
 
 <!-- ═══════════════════════════════════════════════════════
      SEÇÃO — CONCLUSÃO / REFLEXÃO
