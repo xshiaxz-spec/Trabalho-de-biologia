@@ -407,7 +407,7 @@ function initCounters() {
   if (section) observer.observe(section);
 
   function animateTemp() {
-    let v = 0; const target = 1.2; const dur = 2000;
+    let v = 0; const target = 1.48; const dur = 2000;
     const start = Date.now();
     (function step() {
       const t = Math.min(1, (Date.now() - start) / dur);
@@ -418,7 +418,7 @@ function initCounters() {
   }
 
   function animateCO2() {
-    let v = 280; const target = 421; const dur = 2500;
+    let v = 280; const target = 430; const dur = 2500;
     const start = Date.now();
     (function step() {
       const t = Math.min(1, (Date.now() - start) / dur);
@@ -692,9 +692,9 @@ function initCharts() {
       new Chart(tempCtx, {
         type: 'line',
         data: {
-          labels: ['1850','1870','1890','1910','1930','1950','1970','1990','2000','2010','2020','2023'],
+          labels: ['1850','1870','1890','1910','1930','1950','1970','1990','2000','2010','2020','2025'],
           datasets: [{
-            data: [-0.3,-0.25,-0.2,-0.28,-0.1,0.0,0.1,0.35,0.5,0.72,1.0,1.45],
+            data: [-0.3,-0.25,-0.2,-0.28,-0.1,0.0,0.1,0.35,0.5,0.72,1.0,1.48],
             borderColor: '#ff4444', backgroundColor: 'rgba(255,68,68,0.1)',
             fill: true, tension: 0.4, pointBackgroundColor: '#ff4444',
             pointRadius: 3, pointHoverRadius: 6,
@@ -711,9 +711,9 @@ function initCharts() {
       new Chart(co2Ctx, {
         type: 'line',
         data: {
-          labels: ['1800','1850','1900','1950','1970','1990','2000','2010','2020','2023'],
+          labels: ['1800','1850','1900','1950','1970','1990','2000','2010','2020','2025'],
           datasets: [{
-            data: [280,284,296,311,325,354,369,388,413,421],
+            data: [280,284,296,311,325,354,369,388,413,430],
             borderColor: '#00d4ff', backgroundColor: 'rgba(0,212,255,0.08)',
             fill: true, tension: 0.4, pointBackgroundColor: '#00d4ff',
             pointRadius: 3, pointHoverRadius: 6,
@@ -920,7 +920,7 @@ const CITY_DATA = {
     icon: '📍',
     region: 'Norte Fluminense · RJ · Nossa cidade',
     stats: [
-      { val: '+2°C',    lbl: 'Projeção até 2100' },
+      { val: '+2°C',    lbl: 'Projeção local até 2100' },
       { val: '54 mil',  lbl: 'Habitantes' },
       { val: '720 km²', lbl: 'Área total' },
       { val: '100%',    lbl: 'Litoral em risco' },
@@ -951,7 +951,7 @@ const CITY_DATA = {
     icon: '🌿',
     region: 'Norte Fluminense · RJ',
     stats: [
-      { val: '+1.8°C',   lbl: 'Projeção até 2100' },
+      { val: '+1.8°C',   lbl: 'Projeção local até 2100' },
       { val: '15 mil',   lbl: 'Habitantes' },
       { val: '308 km²',  lbl: 'Área total' },
       { val: '2 lagoas', lbl: 'Ecossistemas em risco' },
@@ -982,7 +982,7 @@ const CITY_DATA = {
     icon: '🏙️',
     region: 'Norte Fluminense · RJ · Maior cidade da região',
     stats: [
-      { val: '+2.2°C',     lbl: 'Projeção até 2100' },
+      { val: '+2.2°C',     lbl: 'Projeção local até 2100' },
       { val: '507 mil',    lbl: 'Habitantes' },
       { val: '4.027 km²',  lbl: 'Área total' },
       { val: 'Rio Paraíba', lbl: 'Recurso hídrico em risco' },
@@ -1013,7 +1013,7 @@ const CITY_DATA = {
     icon: '🛢️',
     region: 'Norte Fluminense · RJ · Polo do Petróleo',
     stats: [
-      { val: '+1.9°C',  lbl: 'Projeção até 2100' },
+      { val: '+1.9°C',  lbl: 'Projeção local até 2100' },
       { val: '239 mil', lbl: 'Habitantes' },
       { val: '1.216 km²', lbl: 'Área total' },
       { val: '36 km',   lbl: 'Litoral ameaçado' },
@@ -1044,7 +1044,7 @@ const CITY_DATA = {
     icon: '🦪',
     region: 'Norte Fluminense · RJ',
     stats: [
-      { val: '+1.8°C',  lbl: 'Projeção até 2100' },
+      { val: '+1.8°C',  lbl: 'Projeção local até 2100' },
       { val: '130 mil', lbl: 'Habitantes' },
       { val: '228 km²', lbl: 'Área total' },
       { val: '22 km',   lbl: 'Litoral em risco' },
