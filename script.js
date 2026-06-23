@@ -407,7 +407,7 @@ function initCounters() {
   if (section) observer.observe(section);
 
   function animateTemp() {
-    let v = 0; const target = 1.48; const dur = 2000;
+    let v = 0; const target = 1.47; const dur = 2000;
     const start = Date.now();
     (function step() {
       const t = Math.min(1, (Date.now() - start) / dur);
@@ -418,7 +418,7 @@ function initCounters() {
   }
 
   function animateCO2() {
-    let v = 280; const target = 430; const dur = 2500;
+    let v = 280; const target = 432; const dur = 2500;
     const start = Date.now();
     (function step() {
       const t = Math.min(1, (Date.now() - start) / dur);
@@ -429,7 +429,7 @@ function initCounters() {
   }
 
   function animateDeforest() {
-    let v = 0; const target = 27000; const dur = 3000; // hectares lost per hour estimated
+    let v = 0; const target = 29863; const dur = 3000; // cerca de 10,9 milhões ha/ano = ~29.863 ha/dia
     const start = Date.now();
     (function step() {
       const t = Math.min(1, (Date.now() - start) / dur);
@@ -692,9 +692,9 @@ function initCharts() {
       new Chart(tempCtx, {
         type: 'line',
         data: {
-          labels: ['1850','1870','1890','1910','1930','1950','1970','1990','2000','2010','2020','2024'],
+          labels: ['1850','1870','1890','1910','1930','1950','1970','1990','2000','2010','2020','2024','2025'],
           datasets: [{
-            data: [-0.3,-0.25,-0.2,-0.28,-0.1,0.0,0.1,0.35,0.5,0.72,1.0,1.47],
+            data: [-0.3,-0.25,-0.2,-0.28,-0.1,0.0,0.1,0.35,0.5,0.72,1.0,1.60,1.47],
             borderColor: '#ff4444', backgroundColor: 'rgba(255,68,68,0.1)',
             fill: true, tension: 0.4, pointBackgroundColor: '#ff4444',
             pointRadius: 3, pointHoverRadius: 6,
@@ -711,9 +711,9 @@ function initCharts() {
       new Chart(co2Ctx, {
         type: 'line',
         data: {
-          labels: ['1800','1850','1900','1950','1970','1990','2000','2010','2020','2025'],
+          labels: ['1800','1850','1900','1950','1970','1990','2000','2010','2020','2025','2026'],
           datasets: [{
-            data: [280,284,296,311,325,354,369,388,413,430],
+            data: [280,284,296,311,325,354,369,388,413,430.5,432.3],
             borderColor: '#00d4ff', backgroundColor: 'rgba(0,212,255,0.08)',
             fill: true, tension: 0.4, pointBackgroundColor: '#00d4ff',
             pointRadius: 3, pointHoverRadius: 6,
@@ -730,9 +730,9 @@ function initCharts() {
       new Chart(iceCtx, {
         type: 'bar',
         data: {
-          labels: ['1980','1985','1990','1995','2000','2005','2010','2015','2020','2023'],
+          labels: ['1980','1985','1990','1995','2000','2005','2010','2015','2020','2024','2025'],
           datasets: [{
-            data: [7.5,7.2,6.9,6.5,6.3,5.8,4.9,4.6,3.9,4.1],
+            data: [7.5,7.2,6.9,6.5,6.3,5.8,4.9,4.6,3.9,4.28,4.60],
             backgroundColor: 'rgba(100,200,255,0.3)',
             borderColor: '#64c8ff', borderWidth: 1, borderRadius: 4
           }]
@@ -747,9 +747,9 @@ function initCharts() {
       new Chart(seaCtx, {
         type: 'line',
         data: {
-          labels: ['1993','1996','1999','2002','2005','2008','2011','2014','2017','2020','2024'],
+          labels: ['1993','1996','1999','2002','2005','2008','2011','2014','2017','2020','2024','2026'],
           datasets: [{
-            data: [0,15,27,38,50,63,78,95,112,140,170],
+            data: [0,10,20,30,40,50,60,70,80,90,96,98],
             borderColor: '#00ff88', backgroundColor: 'rgba(0,255,136,0.08)',
             fill: true, tension: 0.4, pointBackgroundColor: '#00ff88',
             pointRadius: 3, borderWidth: 2
@@ -920,28 +920,28 @@ const CITY_DATA = {
     icon: '📍',
     region: 'Norte Fluminense · RJ · Nossa cidade',
     stats: [
-      { val: '+2°C',    lbl: 'Projeção regional até 2100' },
-      { val: '54 mil',  lbl: 'Habitantes' },
-      { val: '720 km²', lbl: 'Área total' },
-      { val: '100%',    lbl: 'Litoral em risco' },
+      { val: '23.142', lbl: 'Habitantes estimados (IBGE 2025)' },
+      { val: '719,643 km²', lbl: 'Área territorial (IBGE 2025)' },
+      { val: '31,12 hab/km²', lbl: 'Densidade demográfica (Censo 2022)' },
+      { val: 'Jurubatiba', lbl: 'Restinga protegida na região' },
     ],
     impacts: [
-      { icon: '🌊', text: 'Erosão costeira acelerada ameaça a orla e comunidades pesqueiras.' },
-      { icon: '🏝️', text: 'P.N. Restinga de Jurubatiba sofre com secas prolongadas e invasão de espécies.' },
-      { icon: '🐠', text: 'Lagoas costeiras com salinização crescente, comprometendo peixes nativos.' },
-      { icon: '🌡️', text: 'Ondas de calor mais frequentes afetam saúde e agricultura local.' },
+      { icon: '🌊', text: 'Áreas costeiras podem sofrer com erosão, ressacas e avanço do nível do mar.' },
+      { icon: '🏝️', text: 'A Restinga de Jurubatiba é sensível a alterações de temperatura, chuva e pressão humana.' },
+      { icon: '💧', text: 'Lagoas costeiras podem ser afetadas por mudanças no regime de chuvas e salinização.' },
+      { icon: '🌡️', text: 'Ondas de calor mais frequentes afetam saúde, agricultura e conforto térmico.' },
     ],
     eco: [
-      { icon: '🏝️', text: 'P.N. Restinga de Jurubatiba — único parque nacional de restinga do Brasil.' },
-      { icon: '💧', text: 'Lagoas costeiras: Lagoa de Quissamã, Lagoa Comprida e outras 8 lagoas interligadas.' },
-      { icon: '🌿', text: 'Restinga: vegetação adaptada à areia e salinidade, habitat exclusivo.' },
-      { icon: '🐦', text: 'Mais de 200 espécies de aves registradas — área de importância para migratórias.' },
+      { icon: '🏝️', text: 'Parque Nacional da Restinga de Jurubatiba — trecho de restinga muito conservado do litoral fluminense.' },
+      { icon: '💧', text: 'Lagoas costeiras e áreas úmidas são importantes para peixes, aves e equilíbrio ecológico.' },
+      { icon: '🌿', text: 'Restinga: vegetação adaptada à areia, vento, salinidade e solos pobres em nutrientes.' },
+      { icon: '🐦', text: 'A região abriga aves, répteis, peixes e espécies associadas a ambientes costeiros.' },
     ],
     actions: [
       { icon: '♻️', text: 'Separe resíduos e apoie a coleta seletiva no município.' },
-      { icon: '🌱', text: 'Replante espécies nativas de restinga em áreas degradadas.' },
-      { icon: '📣', text: 'Denuncie desmatamento e pesca irregular nas lagoas ao IBAMA.' },
-      { icon: '🚶', text: 'Reduza o uso de carro para deslocamentos curtos na cidade.' },
+      { icon: '🌱', text: 'Valorize espécies nativas e evite degradar áreas de restinga.' },
+      { icon: '📣', text: 'Denuncie desmatamento, queimadas e pesca irregular aos órgãos ambientais.' },
+      { icon: '🚶', text: 'Reduza o uso de carro em deslocamentos curtos quando possível.' },
     ],
     ods: ['ODS 13', 'ODS 14', 'ODS 15', 'ODS 6'],
     color: '#00d4ff',
@@ -951,27 +951,27 @@ const CITY_DATA = {
     icon: '🌿',
     region: 'Norte Fluminense · RJ',
     stats: [
-      { val: '+1.8°C',   lbl: 'Projeção regional até 2100' },
-      { val: '15 mil',   lbl: 'Habitantes' },
-      { val: '308 km²',  lbl: 'Área total' },
-      { val: '2 lagoas', lbl: 'Ecossistemas em risco' },
+      { val: '14.329', lbl: 'Habitantes estimados (IBGE 2025)' },
+      { val: '304,884 km²', lbl: 'Área territorial (IBGE 2025)' },
+      { val: '45,42 hab/km²', lbl: 'Densidade demográfica (Censo 2022)' },
+      { val: 'Jurubatiba', lbl: 'Parte do parque nacional' },
     ],
     impacts: [
-      { icon: '🏝️', text: 'Abriga parte do P.N. Restinga de Jurubatiba, com ecossistemas únicos.' },
-      { icon: '💧', text: 'Lagoa de Carapebus e Lagoa Comprida sofrem avanço de salinidade.' },
-      { icon: '🌾', text: 'Agricultura familiar impactada por chuvas irregulares e secas.' },
-      { icon: '🐦', text: 'Aves migratórias perdem habitat com a degradação das lagoas.' },
+      { icon: '🏝️', text: 'Abriga parte do Parque Nacional da Restinga de Jurubatiba, com ecossistemas frágeis.' },
+      { icon: '💧', text: 'Lagoas costeiras podem sofrer com mudanças no regime de chuvas e maior evaporação.' },
+      { icon: '🌾', text: 'A agricultura familiar pode ser afetada por secas, calor extremo e chuvas irregulares.' },
+      { icon: '🐦', text: 'Aves e animais associados às lagoas perdem qualidade de habitat com degradação ambiental.' },
     ],
     eco: [
-      { icon: '💧', text: 'Lagoa de Carapebus e Lagoa Comprida: ecossistemas de água doce ameaçados.' },
-      { icon: '🌿', text: 'Faz parte do corredor ecológico do P.N. Restinga de Jurubatiba.' },
-      { icon: '🐸', text: 'Grande diversidade de anfíbios e répteis nas áreas úmidas.' },
-      { icon: '🌾', text: 'Zona de amortecimento do parque: agricultura e conservação coexistindo.' },
+      { icon: '💧', text: 'Lagoas costeiras e áreas úmidas têm grande importância ecológica local.' },
+      { icon: '🌿', text: 'O município faz parte da região de influência do Parque Nacional da Restinga de Jurubatiba.' },
+      { icon: '🐸', text: 'Áreas úmidas favorecem anfíbios, répteis, aves e outros grupos da fauna.' },
+      { icon: '🌾', text: 'A zona rural depende do equilíbrio entre produção, água e conservação ambiental.' },
     ],
     actions: [
       { icon: '🌱', text: 'Apoie programas de educação ambiental nas escolas da cidade.' },
       { icon: '💧', text: 'Use água com responsabilidade — as lagoas dependem do equilíbrio hídrico.' },
-      { icon: '🚫', text: 'Evite descartar lixo nas margens das lagoas.' },
+      { icon: '🚫', text: 'Evite descartar lixo nas margens de lagoas, rios e canais.' },
       { icon: '🤝', text: 'Participe de mutirões de limpeza e reflorestamento local.' },
     ],
     ods: ['ODS 15', 'ODS 14', 'ODS 2', 'ODS 6'],
@@ -982,27 +982,27 @@ const CITY_DATA = {
     icon: '🏙️',
     region: 'Norte Fluminense · RJ · Maior cidade da região',
     stats: [
-      { val: '+2.2°C',     lbl: 'Projeção regional até 2100' },
-      { val: '507 mil',    lbl: 'Habitantes' },
-      { val: '4.027 km²',  lbl: 'Área total' },
-      { val: 'Rio Paraíba', lbl: 'Recurso hídrico em risco' },
+      { val: '519.259', lbl: 'Habitantes estimados (IBGE 2025)' },
+      { val: '4.032,487 km²', lbl: 'Área territorial (IBGE 2025)' },
+      { val: '119,91 hab/km²', lbl: 'Densidade demográfica (Censo 2022)' },
+      { val: 'Rio Paraíba', lbl: 'Recurso hídrico estratégico' },
     ],
     impacts: [
-      { icon: '🌊', text: 'Rio Paraíba do Sul com volume reduzido por secas e uso intensivo.' },
-      { icon: '🌧️', text: 'Enchentes urbanas mais frequentes com chuvas concentradas.' },
-      { icon: '🌡️', text: 'Ilha de calor urbana intensa — +4°C a +6°C em relação ao entorno rural.' },
-      { icon: '🌾', text: 'Cana-de-açúcar e pecuária regionais ameaçadas por irregularidade hídrica.' },
+      { icon: '🌊', text: 'O Rio Paraíba do Sul é essencial para abastecimento, agricultura e equilíbrio regional.' },
+      { icon: '🌧️', text: 'Chuvas intensas aumentam o risco de alagamentos e enchentes em áreas urbanas.' },
+      { icon: '🌡️', text: 'Áreas muito urbanizadas tendem a sofrer mais com ilhas de calor.' },
+      { icon: '🌾', text: 'Produção rural pode ser afetada por secas, calor intenso e irregularidade das chuvas.' },
     ],
     eco: [
-      { icon: '🌊', text: 'Rio Paraíba do Sul: principal rio do norte fluminense, cada vez mais ameaçado.' },
-      { icon: '🌳', text: 'Fragmentos de Mata Atlântica em processo acelerado de degradação.' },
-      { icon: '🐊', text: 'Jacarés e capivaras habitam as várzeas do Paraíba, mas perdem espaço.' },
-      { icon: '🌾', text: 'Maior polo sucroalcooleiro do estado — setor vulnerável à seca.' },
+      { icon: '🌊', text: 'O Rio Paraíba do Sul é um dos principais sistemas hídricos do Norte Fluminense.' },
+      { icon: '🌳', text: 'Fragmentos de Mata Atlântica ajudam na proteção do solo, da água e da biodiversidade.' },
+      { icon: '🐊', text: 'Áreas de várzea e corpos d’água abrigam espécies adaptadas a ambientes úmidos.' },
+      { icon: '🌾', text: 'A atividade agropecuária regional depende diretamente da disponibilidade de água.' },
     ],
     actions: [
-      { icon: '🚇', text: 'Priorize transporte coletivo na cidade para reduzir emissões.' },
-      { icon: '💡', text: 'Invista em eficiência energética em residências e comércios.' },
-      { icon: '🌳', text: 'Apoie a arborização urbana para combater o efeito ilha de calor.' },
+      { icon: '🚌', text: 'Priorize transporte coletivo, caronas e deslocamentos de menor emissão quando possível.' },
+      { icon: '💡', text: 'Invista em eficiência energética em residências, escolas e comércios.' },
+      { icon: '🌳', text: 'Apoie a arborização urbana para reduzir ilhas de calor.' },
       { icon: '📊', text: 'Cobre planos municipais de adaptação climática dos representantes eleitos.' },
     ],
     ods: ['ODS 11', 'ODS 13', 'ODS 6', 'ODS 3'],
@@ -1013,28 +1013,28 @@ const CITY_DATA = {
     icon: '🛢️',
     region: 'Norte Fluminense · RJ · Polo do Petróleo',
     stats: [
-      { val: '+1.9°C',  lbl: 'Projeção regional até 2100' },
-      { val: '239 mil', lbl: 'Habitantes' },
-      { val: '1.216 km²', lbl: 'Área total' },
-      { val: '36 km',   lbl: 'Litoral ameaçado' },
+      { val: '264.439', lbl: 'Habitantes estimados (IBGE 2025)' },
+      { val: '1.216,989 km²', lbl: 'Área territorial (IBGE 2025)' },
+      { val: '202,46 hab/km²', lbl: 'Densidade demográfica (Censo 2022)' },
+      { val: 'litoral', lbl: 'Área costeira vulnerável' },
     ],
     impacts: [
-      { icon: '🌊', text: 'Costa com erosão acelerada; bairros litorâneos em risco de inundação.' },
-      { icon: '🛢️', text: 'Polo do petróleo exposto a eventos climáticos extremos.' },
-      { icon: '🌧️', text: 'Enchentes urbanas recorrentes em áreas de baixada.' },
-      { icon: '🐠', text: 'Recifes costeiros e manguezais com branqueamento e degradação.' },
+      { icon: '🌊', text: 'Áreas costeiras ficam expostas a ressacas, erosão e elevação do nível do mar.' },
+      { icon: '🛢️', text: 'A economia ligada ao petróleo reforça a importância da transição energética.' },
+      { icon: '🌧️', text: 'Chuvas intensas podem ampliar riscos de enchentes em áreas urbanas e de baixada.' },
+      { icon: '🐠', text: 'Manguezais, praias e ambientes marinhos podem sofrer com aquecimento e poluição.' },
     ],
     eco: [
-      { icon: '🌊', text: 'Manguezais do estuário do Rio Macaé: berçário de peixes e caranguejos.' },
-      { icon: '🐠', text: 'Recifes artificiais e naturais ao largo da costa, ricos em biodiversidade.' },
-      { icon: '🌿', text: 'Restinga da Barra de Macaé: fragmento costeiro ainda preservado.' },
-      { icon: '🐢', text: 'Praias de desova de tartarugas marinhas monitoradas pelo Projeto Tamar.' },
+      { icon: '🌊', text: 'Manguezais e estuários são importantes como berçários de peixes e crustáceos.' },
+      { icon: '🐠', text: 'Ambientes costeiros sustentam pesca, biodiversidade e atividades econômicas.' },
+      { icon: '🌿', text: 'Restingas e áreas verdes ajudam a proteger o litoral contra erosão.' },
+      { icon: '🐢', text: 'A fauna marinha depende de praias e águas costeiras menos poluídas.' },
     ],
     actions: [
-      { icon: '🏭', text: 'Pressione pela transição da economia do petróleo para energias renováveis.' },
-      { icon: '🐠', text: 'Apoie projetos de monitoramento de recifes e tartarugas marinhas.' },
+      { icon: '🏭', text: 'Apoie a transição gradual da economia fóssil para energias renováveis.' },
+      { icon: '🐠', text: 'Valorize projetos de conservação marinha e educação ambiental.' },
       { icon: '🌊', text: 'Participe de limpezas de praia para reduzir plástico no oceano.' },
-      { icon: '☀️', text: 'Instale painéis solares — Macaé tem alto índice de irradiação solar.' },
+      { icon: '☀️', text: 'Incentive energia solar e eficiência energética em escolas, casas e prédios públicos.' },
     ],
     ods: ['ODS 11', 'ODS 9', 'ODS 13', 'ODS 14'],
     color: '#ffd700',
@@ -1044,28 +1044,28 @@ const CITY_DATA = {
     icon: '🦪',
     region: 'Norte Fluminense · RJ',
     stats: [
-      { val: '+1.8°C',  lbl: 'Projeção regional até 2100' },
-      { val: '130 mil', lbl: 'Habitantes' },
-      { val: '228 km²', lbl: 'Área total' },
-      { val: '22 km',   lbl: 'Litoral em risco' },
+      { val: '168.455', lbl: 'Habitantes estimados (IBGE 2025)' },
+      { val: '228,044 km²', lbl: 'Área territorial (IBGE 2025)' },
+      { val: '686,23 hab/km²', lbl: 'Densidade demográfica (Censo 2022)' },
+      { val: 'litoral', lbl: 'Praias e áreas costeiras' },
     ],
     impacts: [
-      { icon: '🦪', text: 'Cultivo de ostras afetado pela acidificação e aquecimento do oceano.' },
-      { icon: '🌊', text: 'Ressaca do mar mais intensa, atingindo avenidas e residências.' },
-      { icon: '🏖️', text: 'Praias com perda de areia acelerada por erosão costeira.' },
-      { icon: '🐟', text: 'Pesca artesanal em declínio com mudança nos cardumes.' },
+      { icon: '🦪', text: 'Organismos marinhos com conchas podem ser afetados por acidificação e aquecimento do oceano.' },
+      { icon: '🌊', text: 'Ressacas e erosão costeira podem atingir praias, vias e construções próximas ao mar.' },
+      { icon: '🏖️', text: 'Praias podem perder faixa de areia com erosão e avanço do mar.' },
+      { icon: '🐟', text: 'A pesca artesanal pode ser afetada por mudanças na temperatura da água e nos cardumes.' },
     ],
     eco: [
-      { icon: '🦪', text: 'Rio das Ostras: referência histórica na aquicultura de bivalves.' },
-      { icon: '🌿', text: 'Lagoa de Imboacica: área de proteção ambiental com vegetação nativa.' },
-      { icon: '🐟', text: 'Rio das Ostras e Rio Iriri: importantes para a pesca artesanal local.' },
-      { icon: '🌊', text: 'Costa rochosa alternada com praias arenosas — alta diversidade de habitat.' },
+      { icon: '🦪', text: 'Ambientes costeiros favorecem moluscos, crustáceos e peixes.' },
+      { icon: '🌿', text: 'Áreas de lagoa, restinga e vegetação costeira ajudam a proteger a biodiversidade.' },
+      { icon: '🐟', text: 'Rios, canais e áreas costeiras são importantes para a pesca artesanal local.' },
+      { icon: '🌊', text: 'A combinação de praias, costões e áreas úmidas cria habitats variados.' },
     ],
     actions: [
-      { icon: '🦪', text: 'Consuma mariscos cultivados localmente e de forma sustentável.' },
-      { icon: '🏖️', text: 'Participe de campanhas contra construções irregulares na orla.' },
+      { icon: '🦪', text: 'Valorize a pesca e a produção local feitas de forma sustentável.' },
+      { icon: '🏖️', text: 'Apoie campanhas contra construções irregulares e degradação da orla.' },
       { icon: '🚫', text: 'Evite plástico descartável — ele chega ao mar e afeta a vida marinha.' },
-      { icon: '📸', text: 'Registre e denuncie casos de erosão e descarte irregular de resíduos.' },
+      { icon: '📸', text: 'Registre e denuncie erosão, lixo irregular e danos ambientais.' },
     ],
     ods: ['ODS 14', 'ODS 2', 'ODS 13', 'ODS 11'],
     color: '#9b59b6',
